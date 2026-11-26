@@ -552,8 +552,8 @@ const descriptions={
 const summaryFirst={'목':'새로운 가능성에 마음이 움직이고','화':'관심이 생기면 마음이 금세 뜨거워지고','토':'자신만의 중심을 지키려 하고','금':'스스로 납득할 기준을 중요하게 여기고','수':'상황을 충분히 살펴보고 싶어 하고'};
 const summaryRelation={'목':'함께 성장할 여지를 찾는 편이에요.','화':'마음이 통할 때 활기가 살아나요.','토':'시간을 두고 신뢰를 쌓는 편이에요.','금':'서로의 경계를 존중할 때 편안해져요.','수':'상대의 분위기를 세심하게 살피는 편이에요.'};
 const hasB=w=>{const c=w.charCodeAt(w.length-1)-0xAC00;return c>=0&&c<11172&&c%28!==0};const j=(w,a,b)=>w+(hasB(w)?a:b);
-const nouns={'목':'개척자','화':'열정가','토':'수호자','금':'조율사','수':'관찰자'};
-const adjs={'목':'함께 자라는','화':'다정한','토':'든든한','금':'선이 분명한','수':'눈치 빠른'};
+const nouns=['큰 나무','꽃덩굴','햇살','등불','큰 산','꽃밭','원석','보석','바다','봄비'];
+const adjs={'목':'싱그러운','화':'반짝이는','토':'포근한','금':'또렷한','수':'잔잔한'};
 const axisInfo=['타고난 기본 온도','사람을 대하는 방식','일을 해내는 방식','혼자 있을 때의 마음'];
 const natureIntro={'목':'목의 본성을 가진 사람은 봄의 새싹처럼 늘 다음 가능성을 향해 자라요. 머물러 있는 것보다 움직이는 것에서 생기를 얻어요.','화':'화의 본성을 가진 사람은 여름 햇볕처럼 주변의 온도를 올려요. 좋아하는 것이 생기면 숨기지 못하고, 그 열기가 다른 사람에게도 옮겨 가요.','토':'토의 본성을 가진 사람은 계절과 계절 사이의 땅처럼 모든 것을 받아 주고 붙잡아 줘요. 쉽게 흔들리지 않는 중심이 주변 사람들에게 안정감을 줘요.','금':'금의 본성을 가진 사람은 가을 공기처럼 맑고 분명해요. 무엇이 중요한지 가려내는 눈이 있고, 스스로 정한 기준을 지키려 해요.','수':'수의 본성을 가진 사람은 겨울 물처럼 겉은 고요해도 속은 깊게 흘러요. 보이지 않는 흐름을 읽고, 천천히 그러나 멀리 가요.'};
 const traits={
@@ -810,7 +810,7 @@ function render(noScroll){const yy=$('#by').value,mm=$('#bm').value,dd=$('#bd').
  const chosen=[de,branchE[ps[1][1]],branchE[ps[2][1]],unk?-1:branchE[ps[3][1]]];const names=chosen.map(i=>i<0?'?':E[i]);
  const srcStem=[ds,bMain[ps[1][1]],bMain[ps[2][1]],unk?-1:bMain[ps[3][1]]];const srcChar=[SH[ds],BH[ps[1][1]],BH[ps[2][1]],unk?'?':BH[ps[3][1]]];const srcHan=[stems[ds],branches[ps[1][1]],branches[ps[2][1]],unk?'?':branches[ps[3][1]]];
  const slotGod=srcStem.map((s,i)=>i===0?'일원':s<0?'?':TG[tenGod(ds,s)]);
- const r=rarity(chosen);const [N,S,Cn,Hn]=names;const nick=`${adjs[Cn]} ${nouns[N]}`;
+ const r=rarity(chosen);const [N,S,Cn,Hn]=names;const nick=`${adjs[Cn]} ${nouns[ds]}`;
  current={chosen,code:names,nick,...r,chart:chartOf(ps,unk)};
  $('#tiles').innerHTML=names.map((n,i)=>{const HF={'목':['#5c7a3c','#b9cf9e'],'화':['#c0563d','#f0b7a6'],'토':['#a8792a','#ecd49a'],'금':['#7d8494','#cfd3dc'],'수':['#33507f','#b4c8e6']}[n]||['#8a84a8','#ddd6ea'];const pl=IMG.plaque[n];return `<div class="tile" style="--fg:${HF[0]}"><span>${SLOTS[i].key}</span><b>${n}</b>${({'목':'木','화':'火','토':'土','금':'金','수':'水'})[n]?`<em>${({'목':'木','화':'火','토':'土','금':'金','수':'水'})[n]}</em>`:''}<small>${i===0?'타고난 나':slotGod[i]==='?'?'시간 모름':TGX[slotGod[i]][0]}</small></div>`}).join('');
  $('#code').textContent=names.join('');$('#nick').textContent=nick;

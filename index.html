@@ -933,15 +933,15 @@ $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts
  {const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle='#cfc6ec';fit(subt,`600 $px ${sans}`,32,560,22);g.fillText(subt,80,440)}
  const CAP=['타고난 나','밖에서의 나','친구와 있을 때','혼자 있을 때'];g.textAlign='center';
  for(let i=0;i<4;i++){const n=current.code[i],x=60+i*244,y=540,w=228,h=290,fg=FG[n]||'#8a84a8';
-  g.save();g.shadowColor='#05041c99';g.shadowBlur=30;g.shadowOffsetY=12;{const q=g.createLinearGradient(0,y,0,y+h);q.addColorStop(0,'#ffffff');q.addColorStop(1,'#efe8fb');g.fillStyle=q};rr(x+8,y,w-16,h,26);g.fill();g.restore();
+  g.save();g.shadowColor='#05041c99';g.shadowBlur=30;g.shadowOffsetY=12;{const q=g.createLinearGradient(0,y,0,y+h);q.addColorStop(0,'#f1e9fb');q.addColorStop(1,'#dccff0');g.fillStyle=q};rr(x+8,y,w-16,h,26);g.fill();g.restore();g.strokeStyle='#ffffff70';g.lineWidth=2;rr(x+9,y+1,w-18,h-2,25);g.stroke();
   g.fillStyle='#6b6688';g.font=`700 24px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+50);
   g.fillStyle=fg;g.font=`400 120px ${dokdo}`;g.fillText(n,x+w/2,y+172);
   if(HJ[n]){g.globalAlpha=.72;g.font=`700 30px 'Zen Maru Gothic',serif`;g.fillText(HJ[n],x+w/2,y+216);g.globalAlpha=1}
   g.fillStyle='#5a5680';g.font=`600 21px ${sans}`;g.fillText(i===3&&n==='?'?'시간 모름':CAP[i],x+w/2,y+258)}
  {const u3=current.code[3]==='?',t1=`같은 ${u3?'세':'네'} 글자 `,t2=`${fmtPct(current.pct)}%`;g.font=`400 62px ${dokdo}`;const w1=g.measureText(t1).width,w2=g.measureText(t2).width,x0=540-(w1+w2)/2;g.textAlign='left';g.fillStyle='#fff';g.fillText(t1,x0,936);const pg=g.createLinearGradient(x0+w1,0,x0+w1+w2,0);pg.addColorStop(0,'#f2b6e0');pg.addColorStop(1,'#cdbbff');g.fillStyle=pg;g.fillText(t2,x0+w1,936);g.textAlign='center';
   g.fillStyle='#a69fc8';g.font=`500 23px ${sans}`;g.fillText(`약 ${fmtPeople(current.ppl)} · 통계청 출생 통계 기준${u3?' · 시간을 몰라 세 글자로 계산':''}`,540,984)}
- if(current.ss.length){g.font=`700 24px ${sans}`;const pw=current.ss.map(t=>g.measureText(t).width+48),tot=pw.reduce((a,b)=>a+b,0)+(pw.length-1)*12;let px=540-tot/2;current.ss.forEach((t,i)=>{g.fillStyle='#ffffff14';rr(px,1018,pw[i],48,24);g.fill();g.strokeStyle='#cdbbff55';g.lineWidth=1.5;rr(px,1018,pw[i],48,24);g.stroke();g.fillStyle='#e3d6ff';g.fillText(t,px+pw[i]/2,1050);px+=pw[i]+12})}
- nightCta(g,'당신은 무슨 사주예요?',1130);
+ if(current.ss.length){g.font=`700 31px ${sans}`;const pw=current.ss.map(t=>g.measureText(t).width+64),tot=pw.reduce((a,b)=>a+b,0)+(pw.length-1)*16;let px=540-tot/2;current.ss.forEach((t,i)=>{g.fillStyle='#f2b6e01c';rr(px,1030,pw[i],62,31);g.fill();const bg=g.createLinearGradient(px,0,px+pw[i],0);bg.addColorStop(0,'#f2b6e0');bg.addColorStop(1,'#cdbbff');g.strokeStyle=bg;g.lineWidth=2.5;rr(px,1030,pw[i],62,31);g.stroke();g.fillStyle='#fbe3f1';g.fillText(t,px+pw[i]/2,1072);px+=pw[i]+16})}
+ nightCta(g,'당신은 무슨 사주예요?',current.ss.length?1150:1100);
 {const cc=current.code.join('').replace('?','');await shareCard(cv,`나의-사주-${cc}.png`,`저는 ${j(cc,'이에요','예요')}! 당신은 무슨 사주예요?`,'결과 카드')}});
 const SITE=()=>location.href.split(/[?#]/)[0];
 async function shareCard(cv,fname,text,alt){const url=cv.toDataURL('image/png');let file=null;try{const blob=await new Promise(r=>cv.toBlob(r,'image/png'));file=new File([blob],fname,{type:'image/png'})}catch{}

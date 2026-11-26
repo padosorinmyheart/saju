@@ -450,6 +450,9 @@ body.has-result .toc{top:50px!important}
 body.has-result .toc button{min-height:30px!important;padding:0 11px!important;font-size:12.5px!important;font-weight:600!important;border-color:#D8B77755!important}
 body.has-result .toc button:not(.chb)::before{width:4px;height:4px;margin-right:6px}
 body.has-result .toc{top:34px!important;z-index:7!important;background:#19184a!important;box-shadow:0 10px 14px -6px #19184a!important;padding-top:19px!important;padding-bottom:8px!important}
+.rhero.v2{background:radial-gradient(circle at 92% 8%,#ffffff66,transparent 40%),linear-gradient(180deg,#f1eafb,#e6ddf6)!important;border:1px solid #ffffffaa!important}
+.card:not(.rhero){background:linear-gradient(180deg,#f6f2fd,#ede6f9)!important}
+.rhero.v2 .art:before{opacity:.5}
 </style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29fc2FfbmlnaHRfbGF2IiB4Mj0iLjg1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0I5OUNFQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzcyNTRCNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsb2dvX3NhX25pZ2h0X3BhcGVyIiB4Mj0iLjgiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGOUVCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRUVFMEM1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg0IiByeD0iMjMiIGZpbGw9InVybCgjbG9nb19zYV9uaWdodF9sYXYpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyNiIgeT0iMjgiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MiIgcng9IjYiLz48cGF0aCBkPSJNNDMgMzB2MTBjMCA5LTMgMTMtOSAxNk01MyAzMHYxOXEwIDYgNiA2aDkiLz48L2c+PHBhdGggZD0iTTc2IDE2UTc2LjcgMTkuMyA4MCAyMFE3Ni43IDIwLjcgNzYgMjRRNzUuMyAyMC43IDcyIDIwUTc1LjMgMTkuMyA3NiAxNloiIGZpbGw9IiNEOEI3NzciLz48L3N2Zz4=" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
@@ -899,13 +902,13 @@ $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts
  // ── v3.5 크림 카드 ──
  const INK='#34325e',SUB='#5a5680',FG={'목':'#5c7a3c','화':'#c0563d','토':'#a8792a','금':'#7d8494','수':'#33507f'},TINT={'목':'#b9cf9e','화':'#f0b7a6','토':'#ecd49a','금':'#cfd3dc','수':'#b4c8e6'};
  const fit=(t,font,size,max,min)=>{let s=size;g.font=font.replace('$',s);while(s>min&&g.measureText(t).width>max){s-=2;g.font=font.replace('$',s)}return s};
- g.fillStyle='#f8efe7';g.fillRect(0,0,W,Hh);
- [[1000,90,560,'#cdb8ec77'],[60,1330,600,'#d6c4ef77'],[1080,1250,420,'#e3d3f366'],[0,420,380,'#f3d9d644']].forEach(([x,y,r,c])=>{const q=g.createRadialGradient(x,y,0,x,y,r);q.addColorStop(0,c);q.addColorStop(1,'#f8efe700');g.fillStyle=q;g.fillRect(0,0,W,Hh)});
+ {const q=g.createLinearGradient(0,0,0,Hh);q.addColorStop(0,'#f1eafb');q.addColorStop(1,'#e6ddf6');g.fillStyle=q;g.fillRect(0,0,W,Hh)}
+ [[1000,90,560,'#ffffff88'],[60,1330,600,'#d6c4ef66'],[1080,1250,420,'#cdb8ec44']].forEach(([x,y,r,c])=>{const q=g.createRadialGradient(x,y,0,x,y,r);q.addColorStop(0,c);q.addColorStop(1,c.slice(0,7)+'00');g.fillStyle=q;g.fillRect(0,0,W,Hh)});
  // 초승달
  {const o=document.createElement('canvas');o.width=o.height=440;const q=o.getContext('2d');q.fillStyle='#cbb7ea';q.beginPath();q.arc(200,220,190,0,Math.PI*2);q.fill();q.globalCompositeOperation='destination-out';q.beginPath();q.arc(275,175,175,0,Math.PI*2);q.fill();g.globalAlpha=.55;g.drawImage(o,600,40);g.globalAlpha=1}
  const ig=IMG.ilgan[current.ds];if(ig){try{const im=new Image();im.src=ig;await im.decode();g.drawImage(im,630,70,400,400)}catch{}}
  // 제목 영역
- g.textAlign='left';g.fillStyle=SUB;g.font=`600 30px ${sans}`;const kick='나의 네 가지 모습';const kw=g.measureText(kick).width;g.fillText(kick,150,160);g.strokeStyle='#c9a868';g.lineWidth=2;[[80,134],[150+kw+16,150+kw+70]].forEach(([a,b])=>{g.beginPath();g.moveTo(a,150);g.lineTo(b,150);g.stroke()});
+ g.textAlign='left';g.fillStyle=SUB;g.font=`600 30px ${sans}`;const kick='나의 네 가지 모습';const kw=g.measureText(kick).width;g.fillText(kick,80,160);
  g.fillStyle=INK;fit(current.nick,`400 $px ${serif}`,108,530,60);g.fillText(current.nick,72,285);
  const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle=SUB;fit(subt,`600 $px ${sans}`,34,560,22);g.fillText(subt,80,355);
  // 네 타일
@@ -916,16 +919,16 @@ $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts
   g.save();rr(x+8,y+8,w-16,h-16,22);g.clip();if(pim)g.drawImage(pim,x-22,y-28,w+44,h+56);
    g.globalAlpha=.55;g.fillStyle=tn;[[.15,.98,70],[.45,1.02,80],[.8,.97,72],[.3,1.08,90],[.7,1.1,90]].forEach(([a,b,r])=>{g.beginPath();g.ellipse(x+w*a,y+h*b,r*1.3,r*.55,0,0,Math.PI*2);g.fill()});g.globalAlpha=1;g.restore();
   g.strokeStyle='#d6b77a';g.lineWidth=2.5;rr(x+8,y+8,w-16,h-16,22);g.stroke();
-  g.fillStyle=INK;g.font=`800 26px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+56);const lw=g.measureText(SLOTS[i].key).width;g.strokeStyle='#bda77d';g.lineWidth=1.5;[[-1],[1]].forEach(([s])=>{g.beginPath();g.moveTo(x+w/2+s*(lw/2+10),y+47);g.lineTo(x+w/2+s*(lw/2+42),y+47);g.stroke()});
+  g.fillStyle=INK;g.font=`800 26px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+56);
   g.fillStyle=fg;g.font=`400 132px ${dokdo}`;g.fillText(n,x+w/2,y+196);
   g.fillStyle=SUB;g.font=`600 23px ${sans}`;g.fillText(i===3&&n==='?'?'시간 모름':CAP[i],x+w/2,y+250)}
  // 희귀도
- {const u3=current.code[3]==='?',t=`같은 ${u3?'세':'네'} 글자 ${fmtPct(current.pct)}%`;g.font=`400 42px ${dokdo}`;const tw=g.measureText(t).width;g.fillStyle=INK;g.fillText(t,540,872);g.strokeStyle='#c9a868';g.lineWidth=2;[[90,540-tw/2-56],[540+tw/2+56,990]].forEach(([a,b])=>{g.beginPath();g.moveTo(a,860);g.lineTo(b,860);g.stroke()});g.fillStyle='#c9a868';g.font=`400 26px ${sans}`;g.fillText('✧',540-tw/2-32,869);g.fillText('✧',540+tw/2+32,869);
-  g.fillStyle='#86829f';g.font=`500 22px ${sans}`;g.fillText(`통계청 출생 통계 기준 · 약 ${fmtPeople(current.ppl)}${current.code[3]==='?'?' · 시간을 몰라 세 글자로 계산':''}`,540,916)}
+ {const u3=current.code[3]==='?',t1=`같은 ${u3?'세':'네'} 글자 `,t2=`${fmtPct(current.pct)}%`;g.font=`400 56px ${dokdo}`;const w1=g.measureText(t1).width,w2=g.measureText(t2).width,x0=540-(w1+w2)/2;g.textAlign='left';g.fillStyle=INK;g.fillText(t1,x0,880);g.fillStyle='#6a4fc0';g.fillText(t2,x0+w1,880);g.textAlign='center';
+  g.fillStyle='#86829f';g.font=`500 22px ${sans}`;g.fillText(`약 ${fmtPeople(current.ppl)} · 통계청 출생 통계 기준${current.code[3]==='?'?' · 시간을 몰라 세 글자로 계산':''}`,540,930)}
  // 신살
  if(current.ss.length){g.font=`700 24px ${sans}`;const pw=current.ss.map(t=>g.measureText(t).width+48),tot=pw.reduce((a,b)=>a+b,0)+(pw.length-1)*12;let px=540-tot/2;current.ss.forEach((t,i)=>{g.fillStyle='#ece1f8';rr(px,966,pw[i],48,24);g.fill();g.strokeStyle='#cdb8ec';g.lineWidth=1.5;rr(px,966,pw[i],48,24);g.stroke();g.fillStyle='#5b4a8a';g.fillText(t,px+pw[i]/2,998);px+=pw[i]+12})}
  // 하단
- g.save();g.shadowColor='#2a285044';g.shadowBlur=20;g.shadowOffsetY=8;g.fillStyle='#3a3868';rr(270,1086,540,96,48);g.fill();g.restore();g.fillStyle='#fff';g.strokeStyle='#fff';g.lineWidth=1.4;g.lineJoin='round';g.font=`400 48px ${serif}`;g.strokeText('당신은 무슨 사주예요?',540,1151);g.fillText('당신은 무슨 사주예요?',540,1151);
+ g.save();g.shadowColor='#6a4fc044';g.shadowBlur=20;g.shadowOffsetY=8;{const q=g.createLinearGradient(270,1086,810,1182);q.addColorStop(0,'#9d84dc');q.addColorStop(1,'#7458c2');g.fillStyle=q};rr(270,1086,540,96,48);g.fill();g.restore();g.fillStyle='#fff';g.strokeStyle='#fff';g.lineWidth=1.4;g.lineJoin='round';g.font=`400 48px ${serif}`;g.strokeText('당신은 무슨 사주예요?',540,1151);g.fillText('당신은 무슨 사주예요?',540,1151);
  g.fillStyle=SUB;g.font=`400 34px ${serif}`;g.fillText('✦ 너는 무슨 사주야? ✦',540,1258);
  {const site=/github\.io$/.test(location.host)?(location.host+location.pathname).replace(/index\.html$/,'').replace(/\/$/,''):'';if(site){g.fillStyle='#8a86a8';g.font=`500 22px ${sans}`;g.fillText(site,540,1300)}}
  {const cc=current.code.join('').replace('?','');await shareCard(cv,`나의-사주-${cc}.png`,`저는 ${j(cc,'이에요','예요')}! 당신은 무슨 사주예요?`,'결과 카드')}});

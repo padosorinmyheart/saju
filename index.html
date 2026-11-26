@@ -453,6 +453,14 @@ body.has-result .toc{top:34px!important;z-index:7!important;background:#19184a!i
 .rhero.v2{background:radial-gradient(circle at 92% 8%,#ffffff66,transparent 40%),linear-gradient(180deg,#f1eafb,#e6ddf6)!important;border:1px solid #ffffffaa!important}
 .card:not(.rhero){background:linear-gradient(180deg,#f6f2fd,#ede6f9)!important}
 .rhero.v2 .art:before{opacity:.5}
+
+/* v3.15 통일 타일 · 기울인 로고 */
+.rhero.v2 .tile{background:linear-gradient(180deg,#ffffff,#f6f1fd)!important;border:1px solid #ddd1f2!important;box-shadow:0 4px 12px #7a62a01a!important;padding:10px 2px 8px!important;justify-content:center!important;gap:1px}
+.rhero.v2 .tile span{margin-bottom:4px!important}
+.rhero.v2 .tile b{font-size:clamp(34px,10vw,46px)}
+.rhero.v2 .tile em{font-style:normal;font-family:'Zen Maru Gothic',serif;font-weight:700;font-size:12px;color:var(--fg);opacity:.7;line-height:1;margin:2px 0 6px}
+.logomark{transform:rotate(-9deg);transition:transform .3s}.logo:hover .logomark{transform:rotate(-2deg) scale(1.05)}
+.pshare{display:flex!important;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:14px;min-height:48px;border-radius:99px!important;border:0!important;background:linear-gradient(135deg,#9d84dc,#7458c2)!important;color:#fff!important;font-weight:700}
 </style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29fc2FfbmlnaHRfbGF2IiB4Mj0iLjg1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0I5OUNFQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzcyNTRCNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsb2dvX3NhX25pZ2h0X3BhcGVyIiB4Mj0iLjgiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGOUVCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRUVFMEM1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg0IiByeD0iMjMiIGZpbGw9InVybCgjbG9nb19zYV9uaWdodF9sYXYpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyNiIgeT0iMjgiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MiIgcng9IjYiLz48cGF0aCBkPSJNNDMgMzB2MTBjMCA5LTMgMTMtOSAxNk01MyAzMHYxOXEwIDYgNiA2aDkiLz48L2c+PHBhdGggZD0iTTc2IDE2UTc2LjcgMTkuMyA4MCAyMFE3Ni43IDIwLjcgNzYgMjRRNzUuMyAyMC43IDcyIDIwUTc1LjMgMTkuMyA3NiAxNloiIGZpbGw9IiNEOEI3NzciLz48L3N2Zz4=" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
@@ -721,9 +729,9 @@ function renderYear(birth,clock,sex){const ME=current.me,ps=ME.ps,ds=ME.ds,now=n
  h+=`<p class="note">대운수는 생일에서 가장 가까운 절기까지의 날 수를 3으로 나눈 간이 계산이고, 나이는 만 나이로 대략 표시했어요.</p>`;$('#year').innerHTML=h}
 const FKEY='saju4-friends';const loadF=()=>{try{return JSON.parse(localStorage.getItem(FKEY)||'[]')}catch{return []}};const saveF=a=>{try{localStorage.setItem(FKEY,JSON.stringify(a));return true}catch{return false}};
 function renderMyParty(){if(!current||!current.chart)return;const fr=loadF().map(f=>{const C=chartOf(calc(f.date,f.unk?'12:00':f.clock).ps,f.unk);return {...f,C}});const me=current.chart;
- const marks=[[me.soc,'나','me'],...fr.map(f=>[f.C.soc,[...f.nm].slice(0,5).join(''),'you'])];
+ const marks=[[me.soc,'나','me'],...fr.map(f=>[f.C.soc,[...f.nm].slice(0,5).join(''),'you'])];window.lastParty={marks,fr,me};
  const els=new Set([me.four[0],...fr.map(f=>f.C.four[0])]),miss=E.filter(e=>!els.has(e));
- $('#myparty').innerHTML=`<div class="partywrap">${partyScene(marks)}</div>${fr.length?`<div class="flist">${fr.map((f,i)=>`<div class="fchip"><b>${f.nm}</b><span>${f.C.four.join('')} · ${PARTY[f.C.soc].spot}</span><button type="button" class="fdel" data-i="${i}" aria-label="${f.nm} 잔치에서 내보내기">×</button></div>`).join('')}</div><div class="callout" style="background:#efe8fd"><b>잔치에 모인 본캐 오행</b>${miss.length?`지금 잔치에는 <strong>${miss.join('·')}</strong> 본캐 친구가 없어요. ${miss.map(e=>`${e} 기운`).join(', ')}을 가진 친구를 초대하면 잔치가 더 풍성해져요.`:'목·화·토·금·수 본캐가 모두 모였어요! 오행이 고루 갖춰진 완벽한 잔치예요.'}</div>`:`<p class="note">아직 초대한 사람이 없어요. 위의 궁합에서 케미를 본 뒤 <b>[내 달빛 사랑채에 초대하기]</b>를 누르면 여기에 모여요.</p>`}<p class="note">초대한 친구는 이 기기의 브라우저에만 저장돼요.</p>`;
+ $('#myparty').innerHTML=`<div class="partywrap">${partyScene(marks)}</div>${fr.length?`<div class="flist">${fr.map((f,i)=>`<div class="fchip"><b>${f.nm}</b><span>${f.C.four.join('')} · ${PARTY[f.C.soc].spot}</span><button type="button" class="fdel" data-i="${i}" aria-label="${f.nm} 잔치에서 내보내기">×</button></div>`).join('')}</div><div class="callout" style="background:#efe8fd"><b>잔치에 모인 본캐 오행</b>${miss.length?`지금 잔치에는 <strong>${miss.join('·')}</strong> 본캐 친구가 없어요. ${miss.map(e=>`${e} 기운`).join(', ')}을 가진 친구를 초대하면 잔치가 더 풍성해져요.`:'목·화·토·금·수 본캐가 모두 모였어요! 오행이 고루 갖춰진 완벽한 잔치예요.'}</div>`:`<p class="note">아직 초대한 사람이 없어요. 위의 궁합에서 케미를 본 뒤 <b>[내 달빛 사랑채에 초대하기]</b>를 누르면 여기에 모여요.</p>`}<button type="button" class="button pshare" onclick="partyCard('all')"><img class="bi" src="${UIX.ic.share}" alt="">${fr.length?'내 달빛 사랑채 공유하기':'내 자리 공유하기'}</button><p class="note">초대한 친구는 이 기기의 브라우저에만 저장돼요.</p>`;
  requestAnimationFrame(()=>{const w=$('#myparty .partywrap');if(w&&w.scrollWidth>w.clientWidth)w.scrollLeft=PARTY[me.soc].x/1000*w.scrollWidth-w.clientWidth/2});document.querySelectorAll('#myparty .fdel').forEach(b=>b.addEventListener('click',()=>{const a=loadF();a.splice(+b.dataset.i,1);saveF(a);renderMyParty()}))}
 function renderExtra(birth,clock,unk,ps){const sex=$('input[name=sex]:checked')?.value||'';current.me={ds:ps[2][0],il:ps[2][1],ps,sex};
  const now=new Date();$('#today').innerHTML=dayCard(current.me,now,`오늘 ${now.getMonth()+1}월 ${now.getDate()}일`)+`<button type="button" class="golink" data-go="sec-cal">이번 달 좋은 날 보기</button>`;
@@ -789,7 +797,7 @@ function render(noScroll){const yy=$('#by').value,mm=$('#bm').value,dd=$('#bd').
  const slotGod=srcStem.map((s,i)=>i===0?'일원':s<0?'?':TG[tenGod(ds,s)]);
  const r=rarity(chosen);const [N,S,Cn,Hn]=names;const nick=`${adjs[Cn]} ${nouns[N]}`;
  current={chosen,code:names,nick,...r,chart:chartOf(ps,unk)};
- $('#tiles').innerHTML=names.map((n,i)=>{const HF={'목':['#5c7a3c','#b9cf9e'],'화':['#c0563d','#f0b7a6'],'토':['#a8792a','#ecd49a'],'금':['#7d8494','#cfd3dc'],'수':['#33507f','#b4c8e6']}[n]||['#8a84a8','#ddd6ea'];const pl=IMG.plaque[n];return `<div class="tile" style="--fg:${HF[0]};--tn:${HF[1]};${pl?`--pl:url(${pl})`:''}"><span>${SLOTS[i].key}</span><b>${n}</b><small>${i===0?'타고난 나':slotGod[i]==='?'?'시간 모름':TGX[slotGod[i]][0]}</small></div>`}).join('');
+ $('#tiles').innerHTML=names.map((n,i)=>{const HF={'목':['#5c7a3c','#b9cf9e'],'화':['#c0563d','#f0b7a6'],'토':['#a8792a','#ecd49a'],'금':['#7d8494','#cfd3dc'],'수':['#33507f','#b4c8e6']}[n]||['#8a84a8','#ddd6ea'];const pl=IMG.plaque[n];return `<div class="tile" style="--fg:${HF[0]}"><span>${SLOTS[i].key}</span><b>${n}</b>${({'목':'木','화':'火','토':'土','금':'金','수':'水'})[n]?`<em>${({'목':'木','화':'火','토':'土','금':'金','수':'水'})[n]}</em>`:''}<small>${i===0?'타고난 나':slotGod[i]==='?'?'시간 모름':TGX[slotGod[i]][0]}</small></div>`}).join('');
  $('#code').textContent=names.join('');$('#nick').textContent=nick;
  $('#summary').textContent=`${dateLabel} · ${unk?'시간 모름':clock}`;$('#hil').textContent=`${dayInfo[ds][0]}(${dayInfo[ds][1]}) 일간 · ${dayInfo[ds][2]}`;
  if(IMG.ilgan[ds]){$('#art').style.background='radial-gradient(circle,#cdbbff40 0,transparent 70%)';$('#art').innerHTML=`<img src="${IMG.ilgan[ds]}" alt="${dayInfo[ds][2]}">`}else{$('#art').style.background=colors[N][0];$('#art').innerHTML=ART[N](colors[N][1])}
@@ -867,7 +875,7 @@ function render(noScroll){const yy=$('#by').value,mm=$('#bm').value,dd=$('#bd').
   <div class="callout" style="background:${colors[moneyE][0]}"><b>${moneyE} 기운이 곧 나의 재물</b>${moneyE}의 분야(${ELEMOBJ[moneyE]})와 가까운 일, ${moneyE} 기운이 강해지는 해에 재물 기회가 늘어난다고 봐요.</div>
   <p class="note">전통 명리 해석을 재미로 풀어 본 것이에요. 실제 돈 관리나 투자는 사주가 아니라 내 상황에 맞춰 판단해 주세요.</p>`}
  // 파티
- {const t=slotGod[1];$('#party').innerHTML=`<div class="partywrap">${partyScene([[t,'나 여기!','me']])}</div>`;requestAnimationFrame(()=>{const w=$('#party .partywrap');if(w&&w.scrollWidth>w.clientWidth)w.scrollLeft=PARTY[t].x/1000*w.scrollWidth-w.clientWidth/2});$('#partyDesc').innerHTML=`<div class="pdesc"><b>${PARTY[t].spot}</b><span>사회캐 ${tgName(t)}</span><p>${PARTY[t].d}</p></div><p class="note">다른 자리를 누르면 그 자리에 있는 사람도 볼 수 있어요.</p><div id="partyPeek"></div>`}
+ {const t=slotGod[1];window.myPartyT=t;$('#party').innerHTML=`<div class="partywrap">${partyScene([[t,'나 여기!','me']])}</div>`;requestAnimationFrame(()=>{const w=$('#party .partywrap');if(w&&w.scrollWidth>w.clientWidth)w.scrollLeft=PARTY[t].x/1000*w.scrollWidth-w.clientWidth/2});$('#partyDesc').innerHTML=`<div class="pdesc"><b>${PARTY[t].spot}</b><span>사회캐 ${tgName(t)}</span><p>${PARTY[t].d}</p></div><p class="note">다른 자리를 누르면 그 자리에 있는 사람도 볼 수 있어요.</p><div id="partyPeek"></div><button type="button" class="button pshare" onclick="partyCard('me')"><img class="bi" src="${UIX.ic.share}" alt="">내 자리 공유하기</button>`}
  // 배우자운
  {const t=slotGod[2],mb=ps[2][1];let sp=`<p><b>배우자궁 · 일지 ${tgName(t)}</b><br>${spouseTG[t]}</p>`;
   const sh=[['월지',ps[1][1]]].concat(unk?[]:[['시지',ps[3][1]]]).filter(([n,b])=>brRel(mb,b)==='chung');const hp=[['월지',ps[1][1]]].concat(unk?[]:[['시지',ps[3][1]]]).filter(([n,b])=>brRel(mb,b)==='yukhap');
@@ -900,6 +908,7 @@ $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts
  const W=1080,Hh=1350,cv=document.createElement('canvas');cv.width=W;cv.height=Hh;const g=cv.getContext('2d');const serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif",dokdo="'Jua','Poor Story','Zen Maru Gothic',sans-serif";
  const rr=(x,y,w,h,r)=>{g.beginPath();g.roundRect(x,y,w,h,r)};
  // ── v3.5 크림 카드 ──
+ const HJ={'목':'木','화':'火','토':'土','금':'金','수':'水'};
  const INK='#34325e',SUB='#5a5680',FG={'목':'#5c7a3c','화':'#c0563d','토':'#a8792a','금':'#7d8494','수':'#33507f'},TINT={'목':'#b9cf9e','화':'#f0b7a6','토':'#ecd49a','금':'#cfd3dc','수':'#b4c8e6'};
  const fit=(t,font,size,max,min)=>{let s=size;g.font=font.replace('$',s);while(s>min&&g.measureText(t).width>max){s-=2;g.font=font.replace('$',s)}return s};
  {const q=g.createLinearGradient(0,0,0,Hh);q.addColorStop(0,'#f1eafb');q.addColorStop(1,'#e6ddf6');g.fillStyle=q;g.fillRect(0,0,W,Hh)}
@@ -913,15 +922,13 @@ $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts
  const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle=SUB;fit(subt,`600 $px ${sans}`,34,560,22);g.fillText(subt,80,355);
  // 네 타일
  const CAP=['타고난 나','밖에서의 나','친구와 있을 때','혼자 있을 때'];g.textAlign='center';
- for(let i=0;i<4;i++){const n=current.code[i],x=60+i*244,y=500,w=228,h=285,fg=FG[n]||'#8a84a8',tn=TINT[n]||'#ddd6ea';
-  const pl=IMG.plaque[n];let pim=null;if(pl){try{pim=new Image();pim.src=pl;await pim.decode()}catch{pim=null}}
-  g.save();g.shadowColor='#7a62a030';g.shadowBlur=22;g.shadowOffsetY=8;g.fillStyle='#fdf7f0';rr(x+8,y+8,w-16,h-16,22);g.fill();g.restore();
-  g.save();rr(x+8,y+8,w-16,h-16,22);g.clip();if(pim)g.drawImage(pim,x-22,y-28,w+44,h+56);
-   g.globalAlpha=.55;g.fillStyle=tn;[[.15,.98,70],[.45,1.02,80],[.8,.97,72],[.3,1.08,90],[.7,1.1,90]].forEach(([a,b,r])=>{g.beginPath();g.ellipse(x+w*a,y+h*b,r*1.3,r*.55,0,0,Math.PI*2);g.fill()});g.globalAlpha=1;g.restore();
-  g.strokeStyle='#d6b77a';g.lineWidth=2.5;rr(x+8,y+8,w-16,h-16,22);g.stroke();
-  g.fillStyle=INK;g.font=`800 26px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+56);
-  g.fillStyle=fg;g.font=`400 132px ${dokdo}`;g.fillText(n,x+w/2,y+196);
-  g.fillStyle=SUB;g.font=`600 23px ${sans}`;g.fillText(i===3&&n==='?'?'시간 모름':CAP[i],x+w/2,y+250)}
+ for(let i=0;i<4;i++){const n=current.code[i],x=60+i*244,y=500,w=228,h=285,fg=FG[n]||'#8a84a8';
+  g.save();g.shadowColor='#7a62a026';g.shadowBlur=20;g.shadowOffsetY=8;{const q=g.createLinearGradient(0,y,0,y+h);q.addColorStop(0,'#ffffff');q.addColorStop(1,'#f6f1fd');g.fillStyle=q};rr(x+8,y+8,w-16,h-16,24);g.fill();g.restore();
+  g.strokeStyle='#ddd1f2';g.lineWidth=2;rr(x+8,y+8,w-16,h-16,24);g.stroke();
+  g.fillStyle='#6b6688';g.font=`700 24px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+58);
+  g.fillStyle=fg;g.font=`400 120px ${dokdo}`;g.fillText(n,x+w/2,y+180);
+  if(HJ[n]){g.globalAlpha=.7;g.font=`700 30px 'Zen Maru Gothic',serif`;g.fillText(HJ[n],x+w/2,y+222);g.globalAlpha=1}
+  g.fillStyle=SUB;g.font=`600 21px ${sans}`;g.fillText(i===3&&n==='?'?'시간 모름':CAP[i],x+w/2,y+258)}
  // 희귀도
  {const u3=current.code[3]==='?',t1=`같은 ${u3?'세':'네'} 글자 `,t2=`${fmtPct(current.pct)}%`;g.font=`400 56px ${dokdo}`;const w1=g.measureText(t1).width,w2=g.measureText(t2).width,x0=540-(w1+w2)/2;g.textAlign='left';g.fillStyle=INK;g.fillText(t1,x0,880);g.fillStyle='#6a4fc0';g.fillText(t2,x0+w1,880);g.textAlign='center';
   g.fillStyle='#86829f';g.font=`500 22px ${sans}`;g.fillText(`약 ${fmtPeople(current.ppl)} · 통계청 출생 통계 기준${current.code[3]==='?'?' · 시간을 몰라 세 글자로 계산':''}`,540,930)}
@@ -1013,6 +1020,22 @@ try{loadMe()}catch(e){}
 
 async function svgToImg(svg,w,h){const css=`.slab{font:700 15px sans-serif;fill:#efeafd}.sbg{fill:#1b1a4acc}.hit{fill:transparent}.fig{opacity:.55}.pmark .pglow{fill:url(#pg)}.pmark .pring{fill:none;stroke:#ffe9a8;stroke-width:3}.pmark .pstar,.pmark .plab{fill:#ffe9a8}.pmark text{font:900 19px sans-serif;fill:#2a2350}.pmark.you .pring{stroke:#b9e3ff}.pmark.you .pstar,.pmark.you .plab{fill:#b9e3ff}`;
  const x=svg.replace('<svg ',`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" `).replace('<defs>',`<defs><style>${css}</style>`);const img=new Image();img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(x);await img.decode();return img}
+async function partyCard(mode){if(!current)return;const LP=window.lastParty||{marks:[],fr:[]};const t=window.myPartyT;const all=mode==='all'&&LP.fr.length;
+ const marks=all?LP.marks:[[t,'나 여기!','me']];const title=all?'내 달빛 사랑채':'사랑채 속 내 자리';
+ await loadFonts('너는 무슨 사주야? 달빛 사랑채 속 내 자리 당신은 어디에 있어요 '+title+(PARTY[t]?PARTY[t].spot:'')+marks.map(m=>m[1]).join('')+'0123456789명이 모였어요');
+ const W=1080,Hh=1350,cv=document.createElement('canvas');cv.width=W;cv.height=Hh;const g=cv.getContext('2d');const serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif",jua="'Jua','Poor Story',sans-serif";const rr=(x,y,w,h,r)=>{g.beginPath();g.roundRect(x,y,w,h,r)};
+ {const q=g.createLinearGradient(0,0,0,Hh);q.addColorStop(0,'#f1eafb');q.addColorStop(1,'#e6ddf6');g.fillStyle=q;g.fillRect(0,0,W,Hh)}
+ [[1000,80,520,'#ffffff88'],[60,1330,600,'#d6c4ef66']].forEach(([x,y,r,c])=>{const q=g.createRadialGradient(x,y,0,x,y,r);q.addColorStop(0,c);q.addColorStop(1,c.slice(0,7)+'00');g.fillStyle=q;g.fillRect(0,0,W,Hh)});
+ g.textAlign='center';g.fillStyle='#5a5680';g.font=`600 30px ${sans}`;g.fillText(all?`${LP.fr.length+1}명이 모였어요`:`${current.nick}의 자리`,540,120);
+ g.fillStyle='#34325e';g.font=`400 84px ${serif}`;g.fillText(title,540,212);
+ try{const pb=new Image();pb.src=IMG.party;await pb.decode();const img=await svgToImg(partyScene(marks,{noBg:true}),1000,600);g.save();g.shadowColor='#3a2a7040';g.shadowBlur=30;g.shadowOffsetY=12;g.fillStyle='#1b1a4a';rr(50,262,980,588,34);g.fill();g.restore();g.save();rr(50,262,980,588,34);g.clip();g.drawImage(pb,50,262,980,588);g.drawImage(img,50,262,980,588);g.restore()}catch(e){}
+ const wrap=(txt,x,y,maxW,lh,maxL)=>{const words=[...txt];let line='',n=0;for(const ch of words){const tt=line+ch;if(g.measureText(tt).width>maxW&&line){g.fillText(line,x,y+n*lh);n++;line=ch;if(n>=maxL)return}else line=tt}if(line&&n<maxL)g.fillText(line,x,y+n*lh)};
+ if(!all&&PARTY[t]){g.fillStyle='#6a4fc0';g.font=`400 64px ${jua}`;g.fillText(PARTY[t].spot,540,950);g.fillStyle='#5a5680';g.font=`600 26px ${sans}`;g.fillText(`사회캐 ${t} · ${TGX[t]?TGX[t][0]:''}`,540,996);g.fillStyle='#34325e';g.font=`500 29px ${sans}`;wrap(PARTY[t].d,540,1056,880,44,2)}
+ else{const rows=marks.slice(0,6).map(([tt,lab])=>`${lab==='나'?'나':lab} · ${PARTY[tt].spot}`);g.font=`600 32px ${sans}`;rows.forEach((r,i)=>{const col=i%2,row=Math.floor(i/2);const x=rows.length===1?540:(col?790:290),y=950+row*62;g.fillStyle=i===0?'#6a4fc0':'#34325e';g.fillText(r,x,y)});if(marks.length>6){g.fillStyle='#7b7799';g.font=`500 24px ${sans}`;g.fillText(`외 ${marks.length-6}명`,540,1100)}}
+ g.save();g.shadowColor='#6a4fc044';g.shadowBlur=20;g.shadowOffsetY=8;{const q=g.createLinearGradient(240,1150,840,1246);q.addColorStop(0,'#9d84dc');q.addColorStop(1,'#7458c2');g.fillStyle=q};rr(240,1150,600,96,48);g.fill();g.restore();
+ g.fillStyle='#fff';g.font=`400 44px ${serif}`;g.fillText('당신은 사랑채 어디에 있어요?',540,1214);
+ g.fillStyle='#5a5680';g.font=`400 30px ${serif}`;g.fillText('✦ 너는 무슨 사주야? ✦',540,1300);
+ await shareCard(cv,all?'내-달빛-사랑채.png':'사랑채-속-내-자리.png',all?`우리 달빛 사랑채에 ${LP.fr.length+1}명이 모였어요! 당신은 사랑채 어디에 있어요?`:`달빛 사랑채에서 나는 '${PARTY[t].spot}'! 당신은 사랑채 어디에 있어요?`,title)}
 async function compatCard(){const C=window.lastCompat;if(!C)return;await loadFonts('너는 무슨 사주야? 케미 四×0123456789점'+C.title.join('')+C.nm+C.A.four.join('')+C.B.four.join(''));const {A,B,nm,score,title,items}=C;
  const W=1080,Hh=1350,cv=document.createElement('canvas');cv.width=W;cv.height=Hh;const g=cv.getContext('2d');const serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif",dokdo="'Jua','Poor Story','Zen Maru Gothic',sans-serif";const rr=(x,y,w,h,r)=>{g.beginPath();g.roundRect(x,y,w,h,r)};
  let gr=g.createLinearGradient(0,0,0,Hh);gr.addColorStop(0,'#14153c');gr.addColorStop(.55,'#2a1f5c');gr.addColorStop(1,'#12133a');g.fillStyle=gr;g.fillRect(0,0,W,Hh);

@@ -511,6 +511,25 @@ h1,h2,h3,.nick,.hil,.rp-sub,.pdesc b,.fb-t,.sharebox+p,.gseg button{text-wrap:ba
 .sgrp .pane img.scene{width:100%;aspect-ratio:2.4/1;height:auto;object-fit:cover;object-position:center 40%;border-radius:16px;margin-bottom:12px}
 .mcol{position:relative}.mebadge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,#a58be6,#7458c2);padding:2px 9px;border-radius:99px;box-shadow:0 3px 8px #6a4fc044;z-index:1}
 .jjw{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:3px;margin-top:6px;font-family:'Zen Maru Gothic',serif}.jjw small{flex-basis:100%;font-family:'Noto Sans KR',sans-serif;font-size:9.5px;color:#9a94b8;font-weight:600;margin-bottom:1px}.jjw i{font-style:normal;font-size:12px;color:#9a94b8}.jjw b{font-size:15px;color:#4a3d8f;font-weight:700}
+
+/* v3.24 희귀도 */
+#rareX{display:grid;gap:14px}
+.rx-hero{border-radius:20px;padding:22px 18px 18px;text-align:center;background:radial-gradient(circle at 80% 0,#5b45a088,transparent 60%),linear-gradient(160deg,#2a2463,#1d1b4f);color:#efeafd}
+.rx-k{font-size:13px;color:#cfc6ec;font-weight:600}.rx-k b{font-family:'Jua',sans-serif;font-weight:400;font-size:16px;color:#fff;letter-spacing:.06em;margin-left:4px}
+.rx-big{font-family:'Jua',sans-serif;font-size:clamp(30px,9vw,40px);margin:8px 0 2px;color:#fff;line-height:1.15}.rx-big em{font-style:normal;background:linear-gradient(90deg,#f2b6e0,#cdbbff);-webkit-background-clip:text;color:transparent}
+.rx-pct{font-size:13px;color:#cfc6ec;font-weight:600}
+.rx-rel{display:inline-block;margin-top:12px;padding:7px 14px;border-radius:99px;background:#ffffff14;border:1px solid #cdbbff44;font-size:13.5px;font-weight:600;color:#fbe3f1}
+.rx-scale p{margin:8px 0 0;font-size:13px;color:#5a5680;text-align:center}
+.rx-bar{position:relative;height:10px;border-radius:99px;background:linear-gradient(90deg,#b28ae8,#e3d9f5 60%,#ece8f3)}
+.rx-bar i{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid #7458c2;transform:translate(-50%,-50%);box-shadow:0 2px 6px #6a4fc055}
+.rx-ends{display:flex;justify-content:space-between;font-size:11px;color:#9591ad;margin-top:6px}
+.rx-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+.rx-facts div{background:#fff;border:1px solid #e6dcf6;border-radius:14px;padding:12px}
+.rx-facts dt{font-size:11.5px;color:#8a84a8;margin:0 0 4px}.rx-facts dd{margin:0;font-size:15px;font-weight:700;color:#34325e;line-height:1.35}
+.rx-three{background:#fff;border:1px solid #e6dcf6;border-radius:14px;padding:12px 14px}
+.rx-3{display:flex;align-items:baseline;gap:10px;margin-top:6px;flex-wrap:wrap}.rx-3 b{font-family:'Jua',sans-serif;font-weight:400;font-size:22px;letter-spacing:.06em;color:#34325e}.rx-3 span{font-size:13.5px;font-weight:600;color:#6a4fc0}
+.rx-three .rx-k{color:#8a84a8}
+.rx-note{margin:0;font-size:12px;line-height:1.65;color:#8a84a8}
 </style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29fc2FfbmlnaHRfbGF2IiB4Mj0iLjg1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0I5OUNFQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzcyNTRCNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsb2dvX3NhX25pZ2h0X3BhcGVyIiB4Mj0iLjgiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGOUVCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRUVFMEM1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg0IiByeD0iMjMiIGZpbGw9InVybCgjbG9nb19zYV9uaWdodF9sYXYpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyNiIgeT0iMjgiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MiIgcng9IjYiLz48cGF0aCBkPSJNNDMgMzB2MTBjMCA5LTMgMTMtOSAxNk01MyAzMHYxOXEwIDYgNiA2aDkiLz48L2c+PHBhdGggZD0iTTc2IDE2UTc2LjcgMTkuMyA4MCAyMFE3Ni43IDIwLjcgNzYgMjRRNzUuMyAyMC43IDcyIDIwUTc1LjMgMTkuMyA3NiAxNloiIGZpbGw9IiNEOEI3NzciLz48L3N2Zz4=" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
@@ -542,8 +561,7 @@ h1,h2,h3,.nick,.hil,.rp-sub,.pdesc b,.fb-t,.sharebox+p,.gseg button{text-wrap:ba
 <div class="card sec" id="sec-close"><h2></h2><div class="prose" id="close"></div></div>
 <div class="card sec" id="sec-alone"><h2></h2><div class="prose" id="alone"></div></div>
 <div class="card" id="sec-sw"><h2>강점과 약점</h2><div class="sw"><div class="swcol good"><h3>이런 점이 빛나요</h3><ul id="strengths"></ul></div><div class="swcol bad"><h3>이런 점은 조심해요</h3><ul id="weaknesses"></ul></div></div></div>
-<div class="card" id="sec-rare"><h2>얼마나 희귀할까요? · 자세히</h2><p class="note" style="margin:0 0 14px"><span class="statbadge">통계청 출생 통계 반영</span> 1970~2025년 한국 출생아 수를 날짜별로 반영했어요.</p><div class="rarity" style="margin-top:0"><div class="pct" id="pct"></div><div><b id="rareTitle"></b><p id="rareDesc"></p><div class="meter"><i id="meter"></i></div></div></div><div class="rare3" id="rare3"></div>
-</div>
+<div class="card" id="sec-rare"><h2>얼마나 희귀할까요?</h2><div id="rareX"></div></div>
 <div class="chapter" id="ch2"><span>CHAPTER 2</span><b>나의 운</b><small>올해와 대운, 좋은 날, 연애, 재물, 직업, 신살, 배우자, 자녀</small></div>
 <div class="card" id="sec-year"><h2>올해와 대운</h2><div class="prose" id="year"></div></div>
 <div class="card" id="sec-cal"><h2>이번 달 좋은 날</h2><p class="note" style="margin:0 0 12px">날짜를 누르면 그날의 운세가 보여요. 내 일간과 그날 일진의 관계로 계산했어요.</p><div id="cal"></div></div>
@@ -838,7 +856,7 @@ const C3=Array.from({length:125},(_,k)=>COUNTS.slice(k*5,k*5+5).reduce((a,b)=>a+
 const fmtPeople=n=>n>=1e4?`${Number((n/1e4).toFixed(n>=1e5?0:1)).toLocaleString('ko-KR')}만 명`:`${Math.round(n/100)*100}명`;
 function rarity3(ch){const k=ch[0]*25+ch[1]*5+ch[2];return {pct3:C3[k]/COUNT_TOTAL*100,people3:C3[k],rank3:R3.indexOf(k)+1}}
 function rarity(ch){if(ch[3]<0){const k=ch[0]*25+ch[1]*5+ch[2];return {pct:C3[k]/COUNT_TOTAL*100,rank:R3.indexOf(k)+1,n:125}}const idx=ch[0]*125+ch[1]*25+ch[2]*5+ch[3];return {pct:COUNTS[idx]/COUNT_TOTAL*100,rank:RANKED.indexOf(idx)+1,n:625}}
-function rareLabel(rank,n=625){rank=Math.round(rank/n*625);if(rank<=30)return '전설급 희귀 조합';if(rank<=125)return '꽤 희귀한 조합';if(rank<=375)return '은근히 특별한 조합';if(rank<=560)return '자주 보이는 조합';return '가장 흔한 조합 중 하나'}
+function rareLabel(rank,n=625){rank=Math.round(rank/n*625);if(rank<=30)return '전설급 희귀 조합';if(rank<=125)return '꽤 희귀한 조합';if(rank<=375)return '은근히 특별한 조합';if(rank<=560)return '친숙한 조합';return '인기 많은 조합'}
 const rankText=(k,n=625)=>k<=n/2?`${n}가지 중 희귀한 순서로 ${k}위`:`${n}가지 중 흔한 순서로 ${n+1-k}위`;const fmtPct=p=>p<.1?p.toFixed(3):p<1?p.toFixed(2):p.toFixed(1);
 const $=s=>document.querySelector(s);let current;
 function render(noScroll){const yy=$('#by').value,mm=$('#bm').value,dd=$('#bd').value,clock=$('#clock').value,known=$('#unknown').checked?'unknown':'known';if(!yy||!mm||!dd){$('#error').textContent='태어난 해, 달, 날을 모두 골라 주세요.';return}if(known==='known'&&!clock){$('#error').textContent="태어난 시간을 넣거나 '몰라요'를 체크해 주세요.";return}let sy=+yy,sm=+mm,sd=+dd;const isL=$('#cal-l').checked;if(isL){const R=lunarToSolar(sy,sm,sd,$('#leapm').checked);if(R.err){$('#error').textContent=R.err;return}({y:sy,m:sm,d:sd}=R)}else if(new Date(sy,sm-1,sd).getDate()!==sd){$('#error').textContent='날짜를 다시 확인해 주세요.';return}const birth=`${sy}-${String(sm).padStart(2,'0')}-${String(sd).padStart(2,'0')}`;const dateLabel=isL?`음력 ${yy}년 ${$('#leapm').checked?'윤':''}${mm}월 ${dd}일 (양력 ${sy}.${sm}.${sd})`:`양력 ${yy}년 ${mm}월 ${dd}일`;const [y,m,d]=(birth||'').split('-').map(Number);if(!birth||(!clock&&known==='known')||!(y>=1900&&y<=2099)||new Date(Date.UTC(y,m-1,d)).getUTCDate()!==d){$('#error').textContent='날짜와 시간을 다시 확인해 주세요.';return}$('#error').textContent='';
@@ -939,7 +957,13 @@ function render(noScroll){const yy=$('#by').value,mm=$('#bm').value,dd=$('#bd').
  {const t=slotGod[1],[type,d,ex]=jobTG[t];const has=k=>gc[k]>0;const way=[has(3)?['조직 안에서','관성이 있어 체계 있는 조직에서 인정받기 좋아요.']:['자유롭게','관성이 없어 틀에 매이지 않는 일 방식이 편해요.'],gc[1]>=2?['표현하며','식상이 많아 만들고 말하는 일이 잘 맞아요.']:null,gc[2]>=2?['돈의 흐름을 다루며','재성이 많아 숫자와 거래에 감각이 있어요.']:null,gc[4]>=2?['배우고 가르치며','인성이 많아 지식을 쌓고 나누는 일이 잘 맞아요.']:null].filter(Boolean);
   $('#job').innerHTML=`<div class="jobhead"><span>월지 ${tgName(t)}</span><b>${type}</b></div><p>${d}</p><div class="jobex"><b>이런 일과 잘 맞아요</b>${ex.split(' · ').map(x=>`<span>${x}</span>`).join('')}</div><p><b>나에게 맞는 일하는 방식</b><br>${way.map(([a,b])=>`<b class="wk">${a}</b> ${b}`).join('<br>')}</p><p class="note">월지(사회궁)는 명리학에서 직업과 사회적 역할을 볼 때 가장 중요하게 보는 자리예요. 예시는 재미로 보는 참고일 뿐, 어떤 일이든 할 수 있어요.</p>`}
  // 희귀도
- $('#pct').textContent=fmtPct(r.pct)+'%';$('#rareTitle').textContent=`${rareLabel(r.rank,r.n)} · ${rankText(r.rank,r.n)}`;const ratio=r.pct/(100/r.n);const n3=names.slice(0,3).join('');$('#rareDesc').innerHTML=`1970~2025년에 태어난 한국인 약 ${fmtPeople(COUNT_TOTAL)} 중 <b>약 ${fmtPeople(ppl)}</b>이 ${j(names.join('').replace('?',''),'이에요','예요')}${unk?' (시간을 몰라 세 글자 기준)':''}. 한 조합의 평균보다 ${ratio>=1?ratio.toFixed(1)+'배 많아요':(1/ratio).toFixed(1)+'배 적어요'}.`;$('#rare3').innerHTML=unk?'':`<div><b>${n3}</b> <span>본캐·사회캐·찐친캐</span></div><div><em>${fmtPct(r3.pct3)}%</em> <span>약 ${fmtPeople(r3.people3)} · 125가지 중 ${r3.rank3<=63?'희귀한 순서로 '+r3.rank3+'위':'흔한 순서로 '+(126-r3.rank3)+'위'}</span></div><div class="src-note">날짜만으로 정해지는 세 글자라 <b>통계청 출생 통계로 확실하게</b> 계산한 값이에요. 네 번째 글자(혼캐)는 출생 시각 통계가 없어 12시진을 같은 비율로 가정했어요.</div>`;$('#meter').style.width=Math.max(4,100-(r.rank-1)/(r.n-1)*100)+'%';
+ {const n3=names.slice(0,3).join(''),oneIn=Math.max(1,Math.round(100/r.pct)),code=names.join('').replace('?',''),pp=r.pct/100,cls=30*pp,grd=300*pp,sch=1000*pp,f1=x=>x.toFixed(1).replace(/\.0$/,'');
+ const rel=cls>=1?`한 반 30명이면 ${f1(cls)}명쯤 있어요`:grd>=1?`한 학년 300명이면 ${Math.round(grd)}명쯤 있어요`:sch>=1?`전교생 1,000명이면 ${Math.round(sch)}명쯤 있어요`:`1만 명이 모인 공연장이면 ${Math.max(1,Math.round(10000*pp))}명쯤 있어요`;
+ const pos=(r.rank-1)/(r.n-1)*100;
+ $('#rareX').innerHTML=`<div class="rx-hero"><div class="rx-k">같은 ${unk?'세':'네'} 글자 <b>${code}</b></div><div class="rx-big"><em>${oneIn.toLocaleString()}명</em> 중 1명</div><div class="rx-pct">${fmtPct(r.pct)}% · ${rareLabel(r.rank,r.n)}</div><div class="rx-rel">${rel}</div></div>
+ <div class="rx-scale"><div class="rx-bar"><i style="left:${pos}%"></i></div><div class="rx-ends"><span>희귀해요</span><span>흔해요</span></div><p>${rankText(r.rank,r.n)}예요.</p></div>
+ <dl class="rx-facts"><div><dt>같은 ${unk?'세':'네'} 글자인 사람</dt><dd>약 ${fmtPeople(ppl)}</dd></div><div><dt>비교한 사람 수</dt><dd>1970~2025년생<br>약 ${fmtPeople(COUNT_TOTAL)}</dd></div></dl>
+ ${unk?`<p class="rx-note">태어난 시간을 몰라서 혼캐를 뺀 세 글자로 계산했어요. 세 글자는 태어난 날짜만으로 정해져서 통계청 출생 통계로 정확히 계산했어요.</p>`:`<div class="rx-three"><div class="rx-k">혼캐를 빼고 세 글자만 보면</div><div class="rx-3"><b>${n3}</b><span>${Math.max(1,Math.round(100/r3.pct3)).toLocaleString()}명 중 1명 · ${fmtPct(r3.pct3)}%</span></div></div><p class="rx-note">세 글자(본캐·사회캐·찐친캐)는 태어난 날짜만으로 정해져서 통계청 출생 통계로 정확히 계산했어요. 혼캐는 태어난 시각 통계가 없어서, 하루 12시진에 고르게 태어난다고 보고 계산했어요.</p>`}`}
  // 계산 근거
  const parts=ps.flatMap(([s,b],i)=>unk&&i===3?[]:[stemE[s],branchE[b]]);const counts=E.map((_,i)=>parts.filter(x=>x===i).length),tot=parts.length;
  $('#bars').innerHTML=E.map((n,i)=>`<div class="bar"><span>${n}</span><div class="track"><div class="fill" style="width:${counts[i]/tot*100}%;background:${colors[n][1]}"></div></div><span>${counts[i]}/${tot}</span></div>`).join('');

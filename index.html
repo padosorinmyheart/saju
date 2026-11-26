@@ -592,6 +592,7 @@ p,li,.prose,.note,.pdesc p,.callout,.tip{text-wrap:wrap!important}
 #grp-what .jobex{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 #grp-what .jobex>b:first-child{flex-basis:100%;margin:0 0 2px!important}
 #grp-what .jobex span{margin:0!important}
+#grp-what .mbox b{font-size:21px!important;line-height:1.35!important;word-break:keep-all}
 </style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29fc2FfbmlnaHRfbGF2IiB4Mj0iLjg1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0I5OUNFQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzcyNTRCNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsb2dvX3NhX25pZ2h0X3BhcGVyIiB4Mj0iLjgiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGOUVCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRUVFMEM1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg0IiByeD0iMjMiIGZpbGw9InVybCgjbG9nb19zYV9uaWdodF9sYXYpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyNiIgeT0iMjgiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MiIgcng9IjYiLz48cGF0aCBkPSJNNDMgMzB2MTBjMCA5LTMgMTMtOSAxNk01MyAzMHYxOXEwIDYgNiA2aDkiLz48L2c+PHBhdGggZD0iTTc2IDE2UTc2LjcgMTkuMyA4MCAyMFE3Ni43IDIwLjcgNzYgMjRRNzUuMyAyMC43IDcyIDIwUTc1LjMgMTkuMyA3NiAxNloiIGZpbGw9IiNEOEI3NzciLz48L3N2Zz4=" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
@@ -891,10 +892,10 @@ function renderExtra(birth,clock,unk,ps){const sex=$('input[name=sex]:checked')?
  const me=E[(stemE[ps[2][0]]+2)%5],[col,why,dir,act]=MONEYTIP[me];$('#money').insertAdjacentHTML('beforeend',`<div class="mtip"><b class="mtitle">재물운 트이는 팁 · ${me} 기운</b><ul><li><b>행운 소품</b>${col}</li><li><b>돈이 들어오는 길</b>${why}</li><li><b>행운의 방향</b>${dir}</li><li><b>이렇게 해 보세요</b>${act}</li><li><b>재물 좋은 날</b>달력에서 금색 점이 찍힌 날에 저축 시작, 중요한 결제를 해 보세요. <button type="button" class="golink" data-go="sec-cal">달력 보기</button></li></ul></div>`);
 
  {const _ds=ps[2][0],slotGod=[null,TG[tenGod(_ds,bMain[ps[1][1]])],TG[tenGod(_ds,bMain[ps[2][1]])],unk?'?':TG[tenGod(_ds,bMain[ps[3][1]])]],gods=[ps[0][0],bMain[ps[0][1]],ps[1][0],bMain[ps[1][1]],bMain[ps[2][1]]].concat(unk?[]:[ps[3][0],bMain[ps[3][1]]]).map(x=>({tg:TG[tenGod(_ds,x)]}));const sexL=sex==='f'?['관성','정관','편관']:sex==='m'?['재성','정재','편재']:null,cntOf=ts=>gods.filter(g=>ts.includes(g.tg)).length,grpN=k=>gods.filter(g=>(TG.indexOf(g.tg)>>1)===k).length,nick=t=>TGX[t]?TGX[t][0]:'';
-  const loveSS=(current.ss||[]).filter(x=>['도화살','홍염살','천을귀인'].includes(x));
-  const box=(lab,val,sub)=>`<div><span>${lab}</span><b${String(val).length>4?' style="font-size:18px;line-height:1.35"':''}>${val}</b><small>${sub}</small></div>`;
+  const loveSS=(current.ss||[]).filter(x=>['도화살','홍염살'].includes(x));
+  const box=(lab,val,sub)=>`<div><span>${lab}</span><b>${val}</b><small>${sub}</small></div>`;
   const H={
-   love:[IMG.fortune.love,'연애운','연애할 때 나는 어떤 사람일까요?',box('연애할 때의 나 · 일지',slotGod[2],nick(slotGod[2]))+box('연애 신살',loveSS.length?loveSS.join('·'):'없음',loveSS.length?'끌림을 더해 주는 별':'담백하게 다가가는 편')],
+   love:[IMG.fortune.love,'연애운','연애할 때 나는 어떤 사람일까요?',box('연애할 때의 나 · 일지',slotGod[2],nick(slotGod[2]))+box('연애 신살',loveSS.length?loveSS.join('·'):'없음',loveSS.length?'끌림을 더해 주는 별':'도화·홍염 없이 담백한 편')],
    money:[IMG.fortune.money,'재물운','돈은 어떻게 들어오고 머물까요?',''],
    job:[IMG.scene['사회캐'],'직업운','밖에서 일할 때 나는 어떤 타입일까요?',box('사회캐 · 월지',slotGod[1],nick(slotGod[1]))+box('나의 일 타입',jobTG[slotGod[1]][0],`관성 ${grpN(3)} · 식상 ${grpN(1)} · 인성 ${grpN(4)}`)],
    spouse:[IMG.scene['찐친캐'],'배우자운','어떤 사람과 어떤 가정을 꾸릴까요?',box('배우자궁 · 일지',slotGod[2],nick(slotGod[2]))+box(sexL?`배우자 별 · ${sexL[0]}`:'배우자 별',sexL?(cntOf(sexL.slice(1))?cntOf(sexL.slice(1))+'개':'없음'):'?',sexL?`${sexL[1]} ${cntOf([sexL[1]])} · ${sexL[2]} ${cntOf([sexL[2]])}`:'성별을 고르면 보여요')],
@@ -1029,7 +1030,7 @@ function render(noScroll){const yy=$('#by').value,mm=$('#bm').value,dd=$('#bd').
  const has=k=>ss.find(x=>x.k===k).at.length>0;current.ds=ds;current.tg=slotGod;current.ss=ss.filter(x=>x.at.length).map(x=>x.k);
  const ilTG=slotGod[2];let love=`<p><b>연애할 때의 나 · 일지 ${tgName(ilTG)}</b><br>${loveTG[ilTG]}</p>`;
  const charm=[has('도화살')&&'도화살',has('홍염살')&&'홍염살'].filter(Boolean);
- love+=`<p>${charm.length?`<b>${charm.join('과 ')}</b>${charm.length===2?'이 모두 있어 밝은 인기와 은근한 매력을 함께 가졌어요.':charm[0]==='도화살'?'이 있어 사람을 끄는 밝은 매력이 있어요.':'이 있어 분위기로 끌리는 은근한 매력이 있어요.'}`:'도화살과 홍염살은 없지만, 오래 볼수록 진가가 드러나는 담백한 매력이 있어요.'}${has('천을귀인')?' 천을귀인까지 있어 좋은 인연을 만나는 복이 있다고 봐요.':''} <button type="button" class="golink" data-go="sec-sinsal">신살 자세히 보기</button></p>`;
+ love+=`<p>${charm.length?`<b>${charm.join('과 ')}</b>${charm.length===2?'이 모두 있어 밝은 인기와 은근한 매력을 함께 가졌어요.':charm[0]==='도화살'?'이 있어 사람을 끄는 밝은 매력이 있어요.':'이 있어 분위기로 끌리는 은근한 매력이 있어요.'}`:'도화살과 홍염살은 없지만, 오래 볼수록 진가가 드러나는 담백한 매력이 있어요.'} <button type="button" class="golink" data-go="sec-sinsal">신살 자세히 보기</button></p>`;
  const cnt10=t=>gods.filter(g=>g.tg===t).length;
  if(sex){const [a,b,label,pa,pb]=sex==='f'?['정관','편관','관성','정관은 안정적인 인연','편관은 강렬한 인연']:['정재','편재','재성','정재는 안정적인 인연','편재는 자유롭고 활발한 인연'];const ca=cnt10(a),cb=cnt10(b),tot=ca+cb;
   love+=`<div class="callout" style="background:#efe8fd"><b>배우자 별(${label}) · ${tot?tot+'개':'없음'}</b>${tot===0?`원국에 ${label}이 없어요. 연애에 얽매이기보다 내 생활을 먼저 가꾸는 편이고, 대운에서 ${label}이 들어올 때 인연이 활발해진다고 봐요.`:ca&&cb?`${j(a,'과','와')} ${j(b,'이','가')} 함께 있어요. ${pa}, ${j(pb,'을','를')} 뜻해서 두 가지 끌림 사이에서 고민할 수 있어요. 마음을 정하기 전에 충분히 시간을 가지세요.`:tot>=2?`${j(ca?a:b,'이','가')} ${tot}개로 많은 편이에요. 이성의 관심을 많이 받고, 소개나 모임에서 인연이 자주 생겨요.`:`${j(ca?a:b,'이','가')} 하나 있어 인연이 또렷한 편이에요. ${ca?pa:pb}을 뜻해요.`}</div>`}

@@ -324,7 +324,7 @@ body.has-result header{padding-bottom:14px}
 #result .chapter{margin-top:14px}
 body.has-result .hdate{display:none}
 </style></head><body><div class="app">
-<header><div class="logo"><span class="seal">四</span>너는 무슨 사주야?</div><div class="tag">실험실 · v3.4</div></header>
+<header><div class="logo"><span class="seal">四</span>너는 무슨 사주야?</div><div class="tag">실험실 · v3.5</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
 <div class="stickers" aria-hidden="true"><div class="st" style="background:#f7d9cf;color:#a6442f">火<small>화</small></div><div class="st" style="background:#dcebd6;color:#3e7047">木<small>목</small></div><div class="st" style="background:#d8e6f4;color:#33658f">水<small>수</small></div><div class="st" style="background:#f4e7c2;color:#86662a">土<small>토</small></div><div class="st" style="background:#e3e5ea;color:#5f6879">金</div></div></section>
 <div class="editbar" id="editbar"><div><span>내 생년월일</span><b id="editlab"></b></div><button type="button" id="editbtn">다시 입력</button></div>
@@ -386,7 +386,7 @@ body.has-result .hdate{display:none}
 <div class="endbar"><button class="button again" id="again" type="button">다른 생년월일로 해 보기 ↑</button></div>
 </section>
 <div class="modal hidden" id="modal"><div class="box"><div id="modalBody"></div><button class="button" id="modalClose" type="button">닫기</button></div></div>
-<div class="foot">이 서비스는 전통 사주를 응용한 창작·오락용 프로토타입이며, 성격이나 미래를 과학적으로 판단하지 않아요. v3.4은 양력 1900~2099년, 음력 1900~2049년(한국천문연구원 기준)과 한국 표준시를 지원해요. 23:30~23:59 출생은 야자시 방식(일주는 당일, 시주는 다음 날 기준)으로 계산해요. 절기 전환 순간, 출생지 경도·균시차, 과거 서머타임 등 시간제도는 전문 만세력과 비교해 주세요. 희귀도는 통계청 출생 통계로 1970~2025년 한국 출생아 수를 날짜별로 반영해 계산했어요. 2000년 1월~2025년 9월은 월별 출생아 수(통계청 KOSIS, Human Fertility Database 경유)를, 1980~1999년은 연간 출생아 수(국가기록원 수록 통계청 자료)에 2000년대 월별 비중을 적용했어요. 1971~1974년과 1976~1979년은 앞뒤 해 사이를 이어 추정했고, 2025년 10~12월은 같은 해 증가율로 추정했어요. 출생 시각은 공개 통계가 없어 12시진을 같은 비율로 가정했어요.</div>
+<div class="foot">이 서비스는 전통 사주를 응용한 창작·오락용 프로토타입이며, 성격이나 미래를 과학적으로 판단하지 않아요. v3.5는 양력 1900~2099년, 음력 1900~2049년(한국천문연구원 기준)과 한국 표준시를 지원해요. 23:30~23:59 출생은 야자시 방식(일주는 당일, 시주는 다음 날 기준)으로 계산해요. 절기 전환 순간, 출생지 경도·균시차, 과거 서머타임 등 시간제도는 전문 만세력과 비교해 주세요. 희귀도는 통계청 출생 통계로 1970~2025년 한국 출생아 수를 날짜별로 반영해 계산했어요. 2000년 1월~2025년 9월은 월별 출생아 수(통계청 KOSIS, Human Fertility Database 경유)를, 1980~1999년은 연간 출생아 수(국가기록원 수록 통계청 자료)에 2000년대 월별 비중을 적용했어요. 1971~1974년과 1976~1979년은 앞뒤 해 사이를 이어 추정했고, 2025년 10~12월은 같은 해 증가율로 추정했어요. 출생 시각은 공개 통계가 없어 12시진을 같은 비율로 가정했어요.</div>
 </div><script>
 const E=['목','화','토','금','수'],H=['木','火','土','金','水'];const stems='갑을병정무기경신임계'.split('');const branches='자축인묘진사오미신유술해'.split('');const stemE=[0,0,1,1,2,2,3,3,4,4];const branchE=[4,2,0,0,2,1,1,2,3,3,2,4];
 const colors={'목':['#dcebd6','#3e7047'],'화':['#f7d9cf','#a6442f'],'토':['#f4e7c2','#86662a'],'금':['#e3e5ea','#5f6879'],'수':['#d8e6f4','#33658f']};const slots=['본성','관계','행동','내면'];
@@ -763,34 +763,44 @@ document.addEventListener('click',e=>{const g=e.target.closest('.golink');if(!g)
 document.querySelectorAll('#toc button').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.go).scrollIntoView({behavior:'smooth',block:'start'})));
 $('#form').addEventListener('submit',e=>{e.preventDefault();render()});{const by=$('#by'),bm=$('#bm'),bd=$('#bd');for(let y=2026;y>=1900;y--)by.insertAdjacentHTML('beforeend',`<option value="${y}">${y}년</option>`);for(let k=1;k<=12;k++)bm.insertAdjacentHTML('beforeend',`<option value="${k}">${k}월</option>`);const fillD=()=>{const y=+by.value||2000,mo=+bm.value||1,n=$('#cal-l').checked?30:new Date(y,mo,0).getDate(),cur=bd.value;bd.innerHTML='<option value="">일</option>'+Array.from({length:n},(_,k)=>`<option value="${k+1}">${k+1}일</option>`).join('');if(cur&&+cur<=n)bd.value=cur};const preview=()=>{const c=$('#conv');if(!$('#cal-l').checked||!by.value||!bm.value||!bd.value){c.textContent='';return}const R=lunarToSolar(+by.value,+bm.value,+bd.value,$('#leapm').checked);c.textContent=R.err?R.err:`양력으로는 ${R.y}년 ${R.m}월 ${R.d}일이에요.`};fillD();by.addEventListener('change',()=>{fillD();preview()});bm.addEventListener('change',()=>{fillD();preview()});bd.addEventListener('change',preview);$('#leapm').addEventListener('change',preview);document.querySelectorAll('input[name=cal]').forEach(r=>r.addEventListener('change',()=>{$('#datefield').classList.toggle('lunar',$('#cal-l').checked);fillD();preview()}));
 $('#again').addEventListener('click',()=>openForm());$('#unknown').addEventListener('change',e=>{const u=e.target.checked;$('#clock').disabled=u;if(u)$('#clock').value='';$('#error').textContent=''});['#by','#bm','#bd','#clock'].forEach(q=>$(q).addEventListener('change',()=>$('#error').textContent=''))}
-$('#copy').addEventListener('click',async()=>{if(!current)return;const t=`저는 ${current.code.join('')}예요(통계청 출생 통계 기준 ${fmtPct(current.pct)}%, 약 ${fmtPeople(current.ppl)}). 당신은 무슨 사주예요? | 너는 무슨 사주야?`;try{await navigator.clipboard.writeText(t);$('#copy').textContent='복사했어요!';setTimeout(()=>$('#copy').textContent='네 글자 복사',1500)}catch{openModal(`<textarea readonly>${t}</textarea><p>위 문구를 길게 눌러 복사해 주세요.</p>`)}});
+$('#copy').addEventListener('click',async()=>{if(!current)return;const cc=current.code.join('').replace('?',''),t=`저는 ${cc}${j(cc,'이에요','예요').slice(cc.length)}(통계청 출생 통계 기준 ${current.code[3]==='?'?'세 글자 ':''}${fmtPct(current.pct)}%, 약 ${fmtPeople(current.ppl)}). 당신은 무슨 사주예요? | 너는 무슨 사주야?`;try{await navigator.clipboard.writeText(t);$('#copy').textContent='복사했어요!';setTimeout(()=>$('#copy').textContent='네 글자 복사',1500)}catch{openModal(`<textarea readonly>${t}</textarea><p>위 문구를 길게 눌러 복사해 주세요.</p>`)}});
 function spaced(g,t,cx,y,font,em){g.font=font;const px=parseFloat(font.split(' ')[1])*em,ch=[...t],ws=ch.map(c=>g.measureText(c).width),tot=ws.reduce((a,b)=>a+b,0)+px*(ch.length-1);const al=g.textAlign;g.textAlign='left';let x=cx-tot/2;ch.forEach((c,i)=>{g.fillText(c,x,y);x+=ws[i]+px});g.textAlign=al}
 const loadFonts=async t=>{try{await Promise.all(['700','400'].flatMap(w=>[document.fonts.load(`400 40px 'Poor Story'`,t),document.fonts.load(`400 40px 'Jua'`,t),document.fonts.load(`700 40px 'Zen Maru Gothic'`,'四木火土金水甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥'+t)]));await document.fonts.ready}catch{}};
-$('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts('너는 무슨 사주야? '+current.code.join('')+current.nick+'0123456789.%당신은무슨사주예요태어난순간별이정해준네글자목화토금수'+dayInfo[current.ds].join(''));
+$('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts('너는 무슨 사주야? '+current.code.join('')+current.nick+'0123456789.%당신은무슨사주예요태어난순간별이정해준네글자목화토금수나의가지모습밖에서친구와있을때혼자시간모름너야'+dayInfo[current.ds].join(''));
  const W=1080,Hh=1350,cv=document.createElement('canvas');cv.width=W;cv.height=Hh;const g=cv.getContext('2d');const serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif",dokdo="'Jua','Poor Story','Zen Maru Gothic',sans-serif";
  const rr=(x,y,w,h,r)=>{g.beginPath();g.roundRect(x,y,w,h,r)};
- // 배경 그림
- {const bg=new Image();bg.src=IMG.bg;try{await bg.decode();g.drawImage(bg,0,0,W,Hh)}catch{g.fillStyle='#14153c';g.fillRect(0,0,W,Hh)}const sh=g.createLinearGradient(0,0,0,Hh);sh.addColorStop(0,'#0a0b2a55');sh.addColorStop(.5,'#0a0b2a22');sh.addColorStop(1,'#0a0b2a88');g.fillStyle=sh;g.fillRect(0,0,W,Hh)}
- // 상단 로고
- g.textAlign='left';g.fillStyle='#8b6ad8';rr(72,70,52,52,14);g.fill();g.fillStyle='#fff';g.font=`900 26px ${serif}`;g.textAlign='center';g.fillText('四',98,106);g.textAlign='left';g.fillStyle='#e9e3ff';g.font=`900 30px ${serif}`;g.fillText('너는 무슨 사주야?',140,106);
- // 일간 그림
- const N=current.code[0],[nbg,nfg]=colors[N];const ig=IMG.ilgan[current.ds];
- if(ig){try{const im=new Image();im.src=ig;await im.decode();g.save();g.shadowColor='#cdbbffaa';g.shadowBlur=50;g.drawImage(im,420,150,240,240);g.restore()}catch{}}
- else{g.save();g.shadowColor='#b79cf599';g.shadowBlur=40;g.fillStyle=nbg;rr(440,170,200,200,46);g.fill();g.restore();try{const svg=ART[N](nfg).replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" ');const img=new Image();img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);await img.decode();g.drawImage(img,460,190,160,160)}catch{}}
- // 네 글자 + 별명
- g.textAlign='center';g.save();g.shadowColor='#b79cf5';g.shadowBlur=36;g.fillStyle='#ffffff';spaced(g,current.code.join(''),540,530,`400 136px ${dokdo}`,0.04);g.restore();
- const ng=g.createLinearGradient(340,0,740,0);ng.addColorStop(0,'#f3edff');ng.addColorStop(1,'#bfa6f7');g.fillStyle=ng;g.font=`900 50px ${serif}`;g.fillText(current.nick,540,605);
- g.fillStyle='#cfc6ec';g.font=`600 28px ${sans}`;g.fillText(`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`,540,656);
- // 네 캐릭터 타일
- current.code.forEach((n,i)=>{const [bg,fg]=colors[n],x=96+i*228,y=700;g.save();g.shadowColor='#0008';g.shadowBlur=24;g.shadowOffsetY=10;g.fillStyle=bg;rr(x,y,204,236,30);g.fill();g.restore();g.strokeStyle='#ffffffcc';g.lineWidth=4;rr(x,y,204,236,30);g.stroke();
-  g.fillStyle=fg;g.font=`400 96px ${dokdo}`;g.fillText(n,x+102,y+118);g.font=`800 24px ${sans}`;g.fillText(SLOTS[i].key,x+102,y+168);g.font=`600 20px ${sans}`;g.globalAlpha=.8;const t=current.tg[i];g.fillText(i===0?'타고난 나':t==='?'?'시간 모름':TGX[t][0],x+102,y+204);g.globalAlpha=1});
- // 신살 배지
- const ss=current.ss.length?current.ss:['신살 없음 · 담백한 매력'];g.font=`800 26px ${sans}`;const pw=ss.map(t=>g.measureText(t).width+56),tot=pw.reduce((a,b)=>a+b,0)+(ss.length-1)*14;let px=540-tot/2;
- ss.forEach((t,i)=>{const on=!!current.ss.length;const bg2=g.createLinearGradient(px,0,px+pw[i],0);bg2.addColorStop(0,on?'#e889b5':'#ffffff22');bg2.addColorStop(1,on?'#a675d9':'#ffffff22');g.fillStyle=bg2;rr(px,980,pw[i],54,27);g.fill();g.fillStyle='#fff';g.fillText(t,px+pw[i]/2,1016);px+=pw[i]+14});
- // 희귀도 패널
- g.fillStyle='#ffffff14';rr(150,1068,780,140,30);g.fill();g.strokeStyle='#cdbbff55';g.lineWidth=2;rr(150,1068,780,140,30);g.stroke();
- g.fillStyle='#d9caff';g.font=`900 64px ${serif}`;g.fillText(fmtPct(current.pct)+'%',540,1140);g.fillStyle='#cfc6ec';g.font=`600 24px ${sans}`;g.fillText(`통계청 출생 통계 기준 · 약 ${fmtPeople(current.ppl)}과 같은 네 글자`,540,1184);
- g.fillStyle='#efeafd';g.font=`800 32px ${sans}`;g.fillText('당신은 무슨 사주예요?',540,1270);g.fillStyle='#9d96c4';g.font=`500 20px ${sans}`;g.fillText('✦  태어난 순간, 별이 정해 준 네 글자  ✦',540,1312);
+ // ── v3.5 크림 카드 ──
+ const INK='#34325e',SUB='#5a5680',FG={'목':'#5c7a3c','화':'#c0563d','토':'#a8792a','금':'#7d8494','수':'#33507f'},TINT={'목':'#b9cf9e','화':'#f0b7a6','토':'#ecd49a','금':'#cfd3dc','수':'#b4c8e6'};
+ const fit=(t,font,size,max,min)=>{let s=size;g.font=font.replace('$',s);while(s>min&&g.measureText(t).width>max){s-=2;g.font=font.replace('$',s)}return s};
+ g.fillStyle='#f8efe7';g.fillRect(0,0,W,Hh);
+ [[1000,90,560,'#cdb8ec77'],[60,1330,600,'#d6c4ef77'],[1080,1250,420,'#e3d3f366'],[0,420,380,'#f3d9d644']].forEach(([x,y,r,c])=>{const q=g.createRadialGradient(x,y,0,x,y,r);q.addColorStop(0,c);q.addColorStop(1,'#f8efe700');g.fillStyle=q;g.fillRect(0,0,W,Hh)});
+ // 초승달
+ {const o=document.createElement('canvas');o.width=o.height=440;const q=o.getContext('2d');q.fillStyle='#cbb7ea';q.beginPath();q.arc(200,220,190,0,Math.PI*2);q.fill();q.globalCompositeOperation='destination-out';q.beginPath();q.arc(275,175,175,0,Math.PI*2);q.fill();g.globalAlpha=.55;g.drawImage(o,600,40);g.globalAlpha=1}
+ const ig=IMG.ilgan[current.ds];if(ig){try{const im=new Image();im.src=ig;await im.decode();g.drawImage(im,630,70,400,400)}catch{}}
+ // 제목 영역
+ g.textAlign='left';g.fillStyle=SUB;g.font=`600 30px ${sans}`;const kick='나의 네 가지 모습';const kw=g.measureText(kick).width;g.fillText(kick,150,160);g.strokeStyle='#c9a868';g.lineWidth=2;[[80,134],[150+kw+16,150+kw+70]].forEach(([a,b])=>{g.beginPath();g.moveTo(a,150);g.lineTo(b,150);g.stroke()});
+ g.fillStyle=INK;fit(current.nick,`400 $px ${serif}`,108,530,60);g.fillText(current.nick,72,285);
+ const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle=SUB;fit(subt,`600 $px ${sans}`,34,560,22);g.fillText(subt,80,355);
+ // 네 타일
+ const CAP=['타고난 나','밖에서의 나','친구와 있을 때','혼자 있을 때'];g.textAlign='center';
+ for(let i=0;i<4;i++){const n=current.code[i],x=60+i*244,y=500,w=228,h=285,fg=FG[n]||'#8a84a8',tn=TINT[n]||'#ddd6ea';
+  const pl=IMG.plaque[n];let pim=null;if(pl){try{pim=new Image();pim.src=pl;await pim.decode()}catch{pim=null}}
+  g.save();g.shadowColor='#7a62a030';g.shadowBlur=22;g.shadowOffsetY=8;g.fillStyle='#fdf7f0';rr(x+8,y+8,w-16,h-16,22);g.fill();g.restore();
+  g.save();rr(x+8,y+8,w-16,h-16,22);g.clip();if(pim)g.drawImage(pim,x-22,y-28,w+44,h+56);
+   g.globalAlpha=.55;g.fillStyle=tn;[[.15,.98,70],[.45,1.02,80],[.8,.97,72],[.3,1.08,90],[.7,1.1,90]].forEach(([a,b,r])=>{g.beginPath();g.ellipse(x+w*a,y+h*b,r*1.3,r*.55,0,0,Math.PI*2);g.fill()});g.globalAlpha=1;g.restore();
+  g.strokeStyle='#d6b77a';g.lineWidth=2.5;rr(x+8,y+8,w-16,h-16,22);g.stroke();
+  g.fillStyle=INK;g.font=`800 26px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+56);const lw=g.measureText(SLOTS[i].key).width;g.strokeStyle='#bda77d';g.lineWidth=1.5;[[-1],[1]].forEach(([s])=>{g.beginPath();g.moveTo(x+w/2+s*(lw/2+10),y+47);g.lineTo(x+w/2+s*(lw/2+42),y+47);g.stroke()});
+  g.fillStyle=fg;g.font=`400 132px ${dokdo}`;g.fillText(n,x+w/2,y+196);
+  g.fillStyle=SUB;g.font=`600 23px ${sans}`;g.fillText(i===3&&n==='?'?'시간 모름':CAP[i],x+w/2,y+250)}
+ // 희귀도
+ {const u3=current.code[3]==='?',t=`같은 ${u3?'세':'네'} 글자 ${fmtPct(current.pct)}%`;g.font=`400 42px ${dokdo}`;const tw=g.measureText(t).width;g.fillStyle=INK;g.fillText(t,540,872);g.strokeStyle='#c9a868';g.lineWidth=2;[[90,540-tw/2-56],[540+tw/2+56,990]].forEach(([a,b])=>{g.beginPath();g.moveTo(a,860);g.lineTo(b,860);g.stroke()});g.fillStyle='#c9a868';g.font=`400 26px ${sans}`;g.fillText('✧',540-tw/2-32,869);g.fillText('✧',540+tw/2+32,869);
+  g.fillStyle='#86829f';g.font=`500 22px ${sans}`;g.fillText(`통계청 출생 통계 기준 · 약 ${fmtPeople(current.ppl)}${current.code[3]==='?'?' · 시간을 몰라 세 글자로 계산':''}`,540,916)}
+ // 신살
+ if(current.ss.length){g.font=`700 24px ${sans}`;const pw=current.ss.map(t=>g.measureText(t).width+48),tot=pw.reduce((a,b)=>a+b,0)+(pw.length-1)*12;let px=540-tot/2;current.ss.forEach((t,i)=>{g.fillStyle='#ece1f8';rr(px,966,pw[i],48,24);g.fill();g.strokeStyle='#cdb8ec';g.lineWidth=1.5;rr(px,966,pw[i],48,24);g.stroke();g.fillStyle='#5b4a8a';g.fillText(t,px+pw[i]/2,998);px+=pw[i]+12})}
+ // 하단
+ g.save();g.shadowColor='#2a285044';g.shadowBlur=20;g.shadowOffsetY=8;g.fillStyle='#3a3868';rr(270,1086,540,96,48);g.fill();g.restore();g.fillStyle='#fff';g.strokeStyle='#fff';g.lineWidth=1.4;g.lineJoin='round';g.font=`400 48px ${serif}`;g.strokeText('당신은 무슨 사주예요?',540,1151);g.fillText('당신은 무슨 사주예요?',540,1151);
+ g.fillStyle=SUB;g.font=`400 34px ${serif}`;g.fillText('✦ 너는 무슨 사주야? ✦',540,1258);
+ {const site=/github\.io$/.test(location.host)?(location.host+location.pathname).replace(/index\.html$/,'').replace(/\/$/,''):'';if(site){g.fillStyle='#8a86a8';g.font=`500 22px ${sans}`;g.fillText(site,540,1300)}}
  const url=cv.toDataURL('image/png');try{const a=document.createElement('a');a.download=`나의-사주-${current.code.join('')}.png`;a.href=url;a.click()}catch{}openModal(`<img src="${url}" alt="결과 카드"><p>다운로드가 안 되면 이미지를 길게 누르거나 오른쪽 클릭해서 저장해 주세요.</p>`)});
 function openModal(h){$('#modalBody').innerHTML=h;$('#modal').classList.remove('hidden')}$('#modalClose').addEventListener('click',()=>$('#modal').classList.add('hidden'));$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')});
 function setupDate(p){const by=$(`#${p}by`),bm=$(`#${p}bm`),bd=$(`#${p}bd`),lun=$(`#${p}cal-l`),leap=$(`#${p}leap`)||$(`#${p}leapm`),conv=$(`#${p}conv`);

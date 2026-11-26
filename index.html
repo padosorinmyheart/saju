@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>너는 무슨 사주야? | 오행 네 글자</title>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="태어난 날과 시간으로 본캐·사회캐·찐친캐·혼캐, 오행 네 글자를 알려 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?">
+<meta property="og:type" content="website"><meta property="og:title" content="너는 무슨 사주야?"><meta property="og:description" content="사주팔자로 알아보는 나의 오행 네 글자. 당신은 무슨 사주예요?"><meta property="og:image" content="https://padosorinmyheart.github.io/saju/og.png"><meta property="og:url" content="https://padosorinmyheart.github.io/saju/"><meta name="twitter:card" content="summary_large_image">
+<title>너는 무슨 사주야? | 오행 네 글자</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Poor+Story&family=Zen+Maru+Gothic:wght@500;700&family=Jua&display=swap" rel="stylesheet">
 <style>
 :root{--night:#12133a;--night2:#24205a;--paper:#f8f5fe;--paper2:#eee8fa;--ink:#221d3c;--mut:#756e8e;--line:#e0d7f3;--red:#7a5cc4;--gold:#cdbbff}
@@ -338,8 +341,9 @@ body.has-result .app{padding-bottom:40px}
 .tabbar button.on{box-shadow:inset 0 0 0 1px #ffffff33,0 6px 16px #6a4fc066}
 .tabbar span{font-size:12px;letter-spacing:.02em}
 body.has-result .toc{top:64px;margin-top:4px}
+.sharebox{display:grid;gap:8px;margin:12px 0 4px}.sharebox .button{width:100%;text-decoration:none;display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:50px;padding:0 14px;line-height:1.2}.snsrow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.snsrow a,.snsrow button{display:flex;align-items:center;justify-content:center;min-height:46px;line-height:1.2;font:inherit;font-size:13px;font-weight:700;padding:10px 4px;border-radius:12px;border:1px solid #cdbbff66;background:#f3eefc;color:#3a3868;text-align:center;text-decoration:none;cursor:pointer}
 </style></head><body><div class="app">
-<header><div class="logo"><span class="seal">四</span>너는 무슨 사주야?</div><div class="tag">실험실 · v3.6</div></header>
+<header><div class="logo"><span class="seal">四</span>너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
 <div class="stickers" aria-hidden="true"><div class="st" style="background:#f7d9cf;color:#a6442f">火<small>화</small></div><div class="st" style="background:#dcebd6;color:#3e7047">木<small>목</small></div><div class="st" style="background:#d8e6f4;color:#33658f">水<small>수</small></div><div class="st" style="background:#f4e7c2;color:#86662a">土<small>토</small></div><div class="st" style="background:#e3e5ea;color:#5f6879">金</div></div></section>
 <div class="editbar" id="editbar"><div><span>내 생년월일</span><b id="editlab"></b></div><button type="button" id="editbtn">다시 입력</button></div>
@@ -357,7 +361,7 @@ body.has-result .toc{top:64px;margin-top:4px}
 <div class="code" id="code" hidden></div>
 <div class="tiles" id="tiles" aria-label="나의 오행 네 글자"></div>
 <div class="rare-pill" id="rarePill"></div>
-<button class="button" id="save" type="button">결과 카드 이미지로 저장</button>
+<button class="button" id="save" type="button">📤 결과 카드 공유하기</button>
 <div class="hlinks"><button type="button" class="golink hl ny" data-go="sec-newyear">✦ 새해 운수</button><button type="button" class="golink hl" data-go="sec-compat">친구랑 케미</button><button class="hl" id="copy" type="button">네 글자 복사</button></div></div>
 <nav class="toc" id="toc"><button data-go="sec-newyear" class="chb nyb">새해 운수</button><button data-go="sec-today" class="chb">오늘</button><button data-go="ch1" class="chb">나</button><button data-go="sec-intro">본캐</button><button data-go="sec-party">잔치</button><button data-go="sec-social">사회캐</button><button data-go="sec-close">찐친캐</button><button data-go="sec-alone">혼캐</button><button data-go="sec-sw">강점·약점</button><button data-go="sec-rare">희귀도</button><button data-go="ch2" class="chb">운</button><button data-go="sec-year">올해·대운</button><button data-go="sec-cal">좋은 날</button><button data-go="sec-love">연애운</button><button data-go="sec-money">재물운</button><button data-go="sec-job">직업운</button><button data-go="sec-sinsal">신살</button><button data-go="sec-spouse">배우자운</button><button data-go="sec-kids">자녀운</button><button data-go="ch3" class="chb">함께</button><button data-go="sec-compat">궁합</button><button data-go="sec-myparty">내 달빛 마당</button><button data-go="ch4" class="chb">명리</button><button data-go="sec-chart">원국</button><button data-go="sec-src">네 글자 출처</button><button data-go="sec-tg">십신</button><button data-go="sec-gloss">용어 사전</button><button data-go="sec-basis">계산 근거</button></nav>
 <div class="card ny-card" id="sec-newyear"><h2>새해 운수</h2><div id="newyear"></div></div>
@@ -401,7 +405,7 @@ body.has-result .toc{top:64px;margin-top:4px}
 <div class="endbar"><button class="button again" id="again" type="button">다른 생년월일로 해 보기 ↑</button></div>
 </section>
 <div class="modal hidden" id="modal"><div class="box"><div id="modalBody"></div><button class="button" id="modalClose" type="button">닫기</button></div></div>
-<div class="foot">이 서비스는 전통 사주를 응용한 창작·오락용 프로토타입이며, 성격이나 미래를 과학적으로 판단하지 않아요. v3.6은 양력 1900~2099년, 음력 1900~2049년(한국천문연구원 기준)과 한국 표준시를 지원해요. 23:30~23:59 출생은 야자시 방식(일주는 당일, 시주는 다음 날 기준)으로 계산해요. 절기 전환 순간, 출생지 경도·균시차, 과거 서머타임 등 시간제도는 전문 만세력과 비교해 주세요. 희귀도는 통계청 출생 통계로 1970~2025년 한국 출생아 수를 날짜별로 반영해 계산했어요. 2000년 1월~2025년 9월은 월별 출생아 수(통계청 KOSIS, Human Fertility Database 경유)를, 1980~1999년은 연간 출생아 수(국가기록원 수록 통계청 자료)에 2000년대 월별 비중을 적용했어요. 1971~1974년과 1976~1979년은 앞뒤 해 사이를 이어 추정했고, 2025년 10~12월은 같은 해 증가율로 추정했어요. 출생 시각은 공개 통계가 없어 12시진을 같은 비율로 가정했어요.</div>
+<div class="foot">이 서비스는 전통 사주를 응용한 창작·오락용 프로토타입이며, 성격이나 미래를 과학적으로 판단하지 않아요. 양력 1900~2099년, 음력 1900~2049년(한국천문연구원 기준)과 한국 표준시를 지원해요. 23:30~23:59 출생은 야자시 방식(일주는 당일, 시주는 다음 날 기준)으로 계산해요. 절기 전환 순간, 출생지 경도·균시차, 과거 서머타임 등 시간제도는 전문 만세력과 비교해 주세요. 희귀도는 통계청 출생 통계로 1970~2025년 한국 출생아 수를 날짜별로 반영해 계산했어요. 2000년 1월~2025년 9월은 월별 출생아 수(통계청 KOSIS, Human Fertility Database 경유)를, 1980~1999년은 연간 출생아 수(국가기록원 수록 통계청 자료)에 2000년대 월별 비중을 적용했어요. 1971~1974년과 1976~1979년은 앞뒤 해 사이를 이어 추정했고, 2025년 10~12월은 같은 해 증가율로 추정했어요. 출생 시각은 공개 통계가 없어 12시진을 같은 비율로 가정했어요.</div>
 </div><script>
 const E=['목','화','토','금','수'],H=['木','火','土','金','水'];const stems='갑을병정무기경신임계'.split('');const branches='자축인묘진사오미신유술해'.split('');const stemE=[0,0,1,1,2,2,3,3,4,4];const branchE=[4,2,0,0,2,1,1,2,3,3,2,4];
 const colors={'목':['#dcebd6','#3e7047'],'화':['#f7d9cf','#a6442f'],'토':['#f4e7c2','#86662a'],'금':['#e3e5ea','#5f6879'],'수':['#d8e6f4','#33658f']};const slots=['본성','관계','행동','내면'];
@@ -816,7 +820,16 @@ $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts
  g.save();g.shadowColor='#2a285044';g.shadowBlur=20;g.shadowOffsetY=8;g.fillStyle='#3a3868';rr(270,1086,540,96,48);g.fill();g.restore();g.fillStyle='#fff';g.strokeStyle='#fff';g.lineWidth=1.4;g.lineJoin='round';g.font=`400 48px ${serif}`;g.strokeText('당신은 무슨 사주예요?',540,1151);g.fillText('당신은 무슨 사주예요?',540,1151);
  g.fillStyle=SUB;g.font=`400 34px ${serif}`;g.fillText('✦ 너는 무슨 사주야? ✦',540,1258);
  {const site=/github\.io$/.test(location.host)?(location.host+location.pathname).replace(/index\.html$/,'').replace(/\/$/,''):'';if(site){g.fillStyle='#8a86a8';g.font=`500 22px ${sans}`;g.fillText(site,540,1300)}}
- const url=cv.toDataURL('image/png');try{const a=document.createElement('a');a.download=`나의-사주-${current.code.join('')}.png`;a.href=url;a.click()}catch{}openModal(`<img src="${url}" alt="결과 카드"><p>다운로드가 안 되면 이미지를 길게 누르거나 오른쪽 클릭해서 저장해 주세요.</p>`)});
+ {const cc=current.code.join('').replace('?','');await shareCard(cv,`나의-사주-${cc}.png`,`저는 ${j(cc,'이에요','예요')}! 당신은 무슨 사주예요?`,'결과 카드')}});
+const SITE=()=>location.href.split(/[?#]/)[0];
+async function shareCard(cv,fname,text,alt){const url=cv.toDataURL('image/png');let file=null;try{const blob=await new Promise(r=>cv.toBlob(r,'image/png'));file=new File([blob],fname,{type:'image/png'})}catch{}
+ const site=SITE(),canFile=!!(file&&navigator.canShare&&navigator.canShare({files:[file]}));
+ const doShare=async()=>{try{if(canFile)await navigator.share({files:[file],text:text+' '+site});else await navigator.share({title:'너는 무슨 사주야?',text,url:site});return true}catch(e){return e&&e.name==='AbortError'}};
+ const ok=navigator.share?await doShare():false;
+ const enc=encodeURIComponent,tw=`https://twitter.com/intent/tweet?text=${enc(text)}&url=${enc(site)}`,th=`https://www.threads.net/intent/post?text=${enc(text+' '+site)}`,fb=`https://www.facebook.com/sharer/sharer.php?u=${enc(site)}`;
+ openModal(`<img src="${url}" alt="${alt}"><div class="sharebox">${navigator.share?'<button type="button" class="button" id="shNative">📤 공유하기</button>':''}<a class="button alt" id="shSave" href="${url}" download="${fname}">⬇ 이미지 저장</a><div class="snsrow"><a href="${tw}" target="_blank" rel="noopener">X</a><a href="${th}" target="_blank" rel="noopener">Threads</a><a href="${fb}" target="_blank" rel="noopener">Facebook</a><button type="button" id="shLink">🔗 링크</button></div></div><p>${navigator.share?'인스타그램 스토리·카카오톡은 <b>공유하기</b>에서 앱을 고르거나, 이미지를 저장한 뒤 올려 주세요.':'인스타그램·카카오톡은 이미지를 저장한 뒤 앱에서 올려 주세요.'}</p>`);
+ const n=$('#shNative');if(n)n.onclick=doShare;$('#shLink').onclick=async()=>{try{await navigator.clipboard.writeText(text+' '+site);$('#shLink').textContent='복사했어요!'}catch{$('#shLink').textContent=site}};
+ return ok}
 function openModal(h){$('#modalBody').innerHTML=h;$('#modal').classList.remove('hidden')}$('#modalClose').addEventListener('click',()=>$('#modal').classList.add('hidden'));$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')});
 function setupDate(p){const by=$(`#${p}by`),bm=$(`#${p}bm`),bd=$(`#${p}bd`),lun=$(`#${p}cal-l`),leap=$(`#${p}leap`)||$(`#${p}leapm`),conv=$(`#${p}conv`);
  if(by.options.length<3)for(let y=2026;y>=1900;y--)by.insertAdjacentHTML('beforeend',`<option value="${y}">${y}년</option>`);if(bm.options.length<3)for(let k=1;k<=12;k++)bm.insertAdjacentHTML('beforeend',`<option value="${k}">${k}월</option>`);
@@ -848,7 +861,7 @@ function compat(e){e.preventDefault();if(!current||!current.chart){$('#cerror').
  <div class="cmparty"><b>잔치에서 두 사람은?</b><div class="partywrap">${partyScene([[A.soc,'나','me'],[B.soc,nm,'you']])}</div><p>나는 <b>${PARTY[A.soc].spot}</b>, ${j(nm,'은','는')} <b>${PARTY[B.soc].spot}</b>에 있어요.${A.soc===B.soc?' 같은 자리에서 만나는 사이예요!':''}</p></div>
  <div class="cmitems">${items.map(([t,d,k])=>`<div class="cmi ${k}"><b>${t}</b><p>${d}</p></div>`).join('')}</div>
  <button class="button red" id="cinvite" type="button">내 달빛 마당에 초대하기</button>
- <div class="actions"><button class="button" id="csave" type="button">케미 카드 이미지로 저장</button><button class="button alt" id="ccopy" type="button">결과 문구 복사하기</button></div>
+ <div class="actions"><button class="button" id="csave" type="button">📤 케미 카드 공유하기</button><button class="button alt" id="ccopy" type="button">결과 문구 복사하기</button></div>
  <p class="note">본캐(일간)의 합·생극, 찐친캐(일지)와 띠(연지)의 합·충, 서로 없는 오행을 채워 주는지를 더해 계산한 재미용 점수예요. 띠는 사주 기준이라 입춘(2월 4일 무렵)에 바뀌어요. 1~2월 초에 태어났다면 알고 있던 띠와 다를 수 있어요.${B.unk?' 상대의 태어난 시간을 몰라서 혼캐는 비교하지 않았어요.':''}</p>`;
  window.lastCompat={A,B,nm,score,title,items,fr:{nm,date:`${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`,clock,unk}};$('#compat').classList.remove('hidden');requestAnimationFrame(()=>{const w=$('#compat .partywrap');if(w&&w.scrollWidth>w.clientWidth)w.scrollLeft=(PARTY[A.soc].x+PARTY[B.soc].x)/2000*w.scrollWidth-w.clientWidth/2});$('#csave').addEventListener('click',compatCard);$('#cinvite').addEventListener('click',()=>{const f=window.lastCompat.fr,a=loadF();if(a.some(x=>x.nm===f.nm&&x.date===f.date)){$('#cinvite').textContent='이미 달빛 마당에 있어요';return}a.push(f);if(!saveF(a)){$('#cinvite').textContent='이 기기에서는 저장할 수 없어요';return}renderMyParty();$('#cinvite').textContent=`${f.nm} 초대 완료! 내 달빛 마당 보기 ↓`;$('#cinvite').onclick=()=>goTo($('#sec-myparty'))});$('#ccopy').addEventListener('click',async()=>{const t=`나 ${A.four.join('')} × ${nm} ${B.four.join('')} = ${title[0]} ${score}점! | 너는 무슨 사주야?`;try{await navigator.clipboard.writeText(t);$('#ccopy').textContent='복사했어요!'}catch{openModal(`<textarea readonly>${t}</textarea><p>위 문구를 길게 눌러 복사해 주세요.</p>`)}});
  $('#compat').scrollIntoView({behavior:'smooth',block:'start'})}
@@ -903,5 +916,5 @@ async function compatCard(){const C=window.lastCompat;if(!C)return;await loadFon
  try{const pb=new Image();pb.src=IMG.party;await pb.decode();const img=await svgToImg(partyScene([[A.soc,'나','me'],[B.soc,nm,'you']],{noBg:true}),1000,600);g.save();rr(60,640,960,576,32);g.clip();g.drawImage(pb,60,640,960,576);g.drawImage(img,60,640,960,576);g.restore();g.strokeStyle='#cdbbff66';g.lineWidth=3;rr(60,640,960,576,32);g.stroke()}catch(e){}
  g.fillStyle='#efeafd';g.font=`700 26px ${sans}`;g.fillText(A.soc===B.soc?`둘 다 ${PARTY[A.soc].spot}! 같은 자리에서 만나는 사이`:`나는 ${PARTY[A.soc].spot}, ${nm}${hasB(nm)?'은':'는'} ${PARTY[B.soc].spot}`,540,1262);
  g.fillStyle='#9d96c4';g.font=`500 20px ${sans}`;g.fillText('✦  별이 먼저 알고 있던 우리 사이  ✦',540,1308);
- const url=cv.toDataURL('image/png');try{const a=document.createElement('a');a.download=`케미-나-${nm}.png`;a.href=url;a.click()}catch{}openModal(`<img src="${url}" alt="케미 카드"><p>다운로드가 안 되면 이미지를 길게 누르거나 오른쪽 클릭해서 저장해 주세요.</p>`)}
+ await shareCard(cv,`케미-나-${nm}.png`,`나 × ${nm} 사주 케미는 ${window.lastCompat.score}점! 너랑 나는 무슨 사주야?`,'케미 카드')}
 </script></body></html>

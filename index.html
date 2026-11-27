@@ -688,7 +688,25 @@ body:not(.has-result) #result{display:none!important}
 #grp-what .wgrp>p>b:first-child:has(+br){display:flex!important;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;font-weight:800;color:#6a4fc0;margin-bottom:4px}
 #grp-what .wgrp>p>b:first-child:has(+br)::after{content:'';flex:1;min-width:24px;height:1px;background:linear-gradient(90deg,#cdbbff,#cdbbff00)}
 #grp-what .wgrp>p>b:first-child:has(+br)+br{display:none}
-</style><style>#grp-four .lead2+p{margin-top:-8px!important}#grp-four h2+.prose{margin-top:4px!important}</style></head><body><div class="app">
+</style><style>#grp-four .lead2+p{margin-top:-8px!important}#grp-four h2+.prose{margin-top:4px!important}</style><style>
+#form .inputs{row-gap:22px!important}
+#form .labrow{margin-bottom:8px!important;align-items:center;gap:8px}
+#form .field>.labrow:last-child{margin-bottom:0!important}
+#form .field>label:not(.leap){display:block;margin-bottom:8px!important}
+#form .hint2{margin:6px 2px 0!important;line-height:1.6!important;font-size:12.5px!important}
+#form .conv:empty{display:none!important}
+#form .remember{margin-top:22px!important}
+#form .button.red{margin-top:14px!important}
+#form .basis{margin-top:16px!important}
+#form+.privacy,.privacy{margin-top:10px!important;line-height:1.6!important}
+.els{grid-template-columns:repeat(5,52px)!important;justify-content:center;gap:12px!important;margin:10px 0 22px!important}
+.el{width:52px;aspect-ratio:.86;border-radius:13px!important;animation:elfloat 4.8s ease-in-out infinite;--r:0deg}
+.el b{font-size:24px!important}.el b::before{-webkit-text-stroke:4px #4b3a8c!important}
+.el i{font-size:9.5px!important}
+.el:nth-child(1){--r:-6deg;animation-delay:0s}.el:nth-child(2){--r:4deg;animation-delay:-1s}.el:nth-child(3){--r:-3deg;animation-delay:-2s}.el:nth-child(4){--r:5deg;animation-delay:-3s}.el:nth-child(5){--r:-4deg;animation-delay:-4s}
+@keyframes elfloat{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-7px) rotate(calc(var(--r)*-.5))}}
+@media (prefers-reduced-motion:reduce){.el{animation:none}}
+</style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29fc2FfbmlnaHRfbGF2IiB4Mj0iLjg1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0I5OUNFQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzcyNTRCNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsb2dvX3NhX25pZ2h0X3BhcGVyIiB4Mj0iLjgiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGOUVCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRUVFMEM1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg0IiByeD0iMjMiIGZpbGw9InVybCgjbG9nb19zYV9uaWdodF9sYXYpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyNiIgeT0iMjgiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MiIgcng9IjYiLz48cGF0aCBkPSJNNDMgMzB2MTBjMCA5LTMgMTMtOSAxNk01MyAzMHYxOXEwIDYgNiA2aDkiLz48L2c+PHBhdGggZD0iTTc2IDE2UTc2LjcgMTkuMyA4MCAyMFE3Ni43IDIwLjcgNzYgMjRRNzUuMyAyMC43IDcyIDIwUTc1LjMgMTkuMyA3NiAxNloiIGZpbGw9IiNEOEI3NzciLz48L3N2Zz4=" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
 <div class="els" aria-hidden="true"><div class="el" style="--pf:#b5d6a8"><b data-t="목">목</b><i>木</i></div><div class="el" style="--pf:#f4ad9f"><b data-t="화">화</b><i>火</i></div><div class="el" style="--pf:#eccb85"><b data-t="토">토</b><i>土</i></div><div class="el" style="--pf:#d3d2e0"><b data-t="금">금</b><i>金</i></div><div class="el" style="--pf:#a9bde8"><b data-t="수">수</b><i>水</i></div></div></section>

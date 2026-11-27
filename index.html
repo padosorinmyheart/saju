@@ -744,10 +744,13 @@ body:not(.has-result) #result{display:none!important}
 #grp-what .wgrp{gap:14px;padding:14px 16px 16px}
 #grp-what .prose>.mbox+*{margin-top:-4px!important}
 </style><style>
-.card.rhero.v2{padding:14px 20px 20px!important}
-.rhero.v2 .hhead{grid-template-columns:1fr 100px!important;align-items:center!important;margin-bottom:10px!important;column-gap:8px}
-.rhero.v2 .hhead .art{width:100px!important;height:100px!important;margin:-4px -8px 0 0}
-.rhero.v2 .htxt{padding:6px 0 0 4px}
+</style><style>
+.nyexp .nyk{display:block;margin-top:8px;font-size:13.5px;line-height:1.65}
+.nyexp .nyk b{display:inline-block;font-size:12px;font-weight:800;color:#6a4fc0;background:#f1ebfd;border-radius:99px;padding:1px 9px;margin-right:6px}
+.nyexp .nychips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.nyexp .nychips i{font-style:normal;font-size:12.5px;font-weight:600;border-radius:99px;padding:3px 10px}
+.nyexp .nychips i.ok{background:#e8f3e4;color:#3f6b38}.nyexp .nychips i.no{background:#fbe9e6;color:#a54a3c}
+.nyexp .nysm{display:block;margin-top:8px;font-size:11.5px;color:#8a84a8}
 </style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxnNCIgeDI9Ii44NSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNCOTlDRUIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3MjU0QjUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSI1IiB5PSI2IiB3aWR0aD0iODYiIGhlaWdodD0iODQiIHJ4PSIyMyIgZmlsbD0idXJsKCNsZzQpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PHJlY3QgeD0iMjciIHk9IjI3IiB3aWR0aD0iMTkiIGhlaWdodD0iMTkiIHJ4PSI1LjUiIGZpbGw9IiNmNGFkOWYiIHN0cm9rZT0iI0ZGRjNEQyIgc3Ryb2tlLXdpZHRoPSIyLjIiLz48cmVjdCB4PSI1MCIgeT0iMjciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxOSIgcng9IjUuNSIgZmlsbD0iI2VjY2I4NSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjIuMiIvPjxyZWN0IHg9IjI3IiB5PSI1MCIgd2lkdGg9IjE5IiBoZWlnaHQ9IjE5IiByeD0iNS41IiBmaWxsPSIjYjVkNmE4IiBzdHJva2U9IiNGRkYzREMiIHN0cm9rZS13aWR0aD0iMi4yIi8+PHJlY3QgeD0iNTAiIHk9IjUwIiB3aWR0aD0iMTkiIGhlaWdodD0iMTkiIHJ4PSI1LjUiIGZpbGw9IiNhOWJkZTgiIHN0cm9rZT0iI0ZGRjNEQyIgc3Ryb2tlLXdpZHRoPSIyLjIiLz48cGF0aCBkPSJNNzYgMTZRNzYuNyAxOS4zIDgwIDIwUTc2LjcgMjAuNyA3NiAyNFE3NS4zIDIwLjcgNzIgMjBRNzUuMyAxOS4zIDc2IDE2WiIgZmlsbD0iI0Q4Qjc3NyIvPjwvc3ZnPg==" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
@@ -1215,6 +1218,22 @@ const yearPillar=Y=>{const yi=mod(Y-1984,60);return [yi%10,yi%12]};
 const YCOLOR=['푸른','푸른','붉은','붉은','노란','노란','하얀','하얀','검은','검은'];
 function samjae(myYb,yb){for(const [g,ys] of SAMJAE){if(g.includes(myYb)){const k=ys.indexOf(yb);return k<0?null:['들삼재','눌삼재','날삼재'][k]}}return null}
 const stars=n=>`<span class="stimg" role="img" aria-label="5점 중 ${n}점">${Array.from({length:5},(_,k)=>`<img src="${k<n?IMG.star.on:IMG.star.off}" alt="">`).join('')}</span>`;
+
+const MONEYWAY={'정재':[['적금','예금','청약'],['큰 한 방 투자'],'꾸준히 쌓는 돈이 가장 잘 붙는 해예요. 매달 자동이체 적금처럼 정해진 리듬으로 모아 보세요.'],
+ '편재':[['주식·펀드(분산)','부동산 공부','부업'],['몰빵 투자','빚내서 투자'],'흐름을 타는 돈이 들어오는 해예요. 투자 기회가 보이지만 한 곳에 몰지 말고 나눠서 하세요.'],
+ '식신':[['부업·재능 수입','적립식 펀드','적금'],['충동 소비'],'잘하는 걸로 버는 해예요. 취미나 재능을 작은 수입으로 바꿔 보세요.'],
+ '상관':[['아이디어 부수입','단기 적금'],['충동 투자','유행 따라 사기'],'말과 아이디어가 돈이 되는 해예요. 다만 기분 따라 쓰거나 투자하기 쉬우니 한 번 더 생각하세요.'],
+ '비견':[['예금','지출 다이어트'],['동업','돈 빌려주기','보증'],'나가는 돈을 막는 게 버는 것만큼 중요한 해예요. 돈 거래는 가족·친구 사이라도 신중하게요.'],
+ '겁재':[['예금','비상금 따로 두기'],['코인·고위험 투자','보증','동업'],'경쟁과 지출이 커지는 해예요. 위험한 투자보다 지키는 쪽이 이기는 해예요.'],
+ '편관':[['보험 점검','비상금'],['무리한 대출'],'갑자기 나갈 돈이 생기기 쉬운 해예요. 비상금과 보험을 먼저 점검해 두세요.'],
+ '정관':[['연금','청약','장기 적금'],['유행 투자'],'안정된 수입과 신용이 쌓이는 해예요. 연금·청약처럼 길게 보는 상품이 잘 맞아요.'],
+ '편인':[['자격증·공부 투자','문서 정리'],['잘 모르는 투자'],'돈보다 배움에 쓰는 돈이 나중에 돌아오는 해예요. 잘 모르는 상품은 피하세요.'],
+ '정인':[['부동산 계약·청약','자격증','예금'],['충동 소비'],'집·문서와 관련된 일이 잘 풀리는 해예요. 계약이나 청약을 알아보기 좋아요.']};
+const HEALTH={'목':['간·눈·근육','간 기능 수치, 눈 검사','스트레칭과 가벼운 산책, 화면 보는 시간 줄이고 눈 쉬게 하기, 늦은 밤 술자리 줄이기'],
+ '화':['심장·혈압·수면','혈압, 심전도','잠자는 시간 지키기, 카페인 줄이기, 숨이 조금 찰 정도의 유산소 운동'],
+ '토':['위장·소화','위내시경, 혈당','규칙적인 식사 시간, 과식·야식 줄이기, 천천히 씹어 먹기'],
+ '금':['폐·호흡기·피부','흉부 엑스레이, 피부 상태','환기와 맑은 공기, 꾸준한 유산소 운동, 보습 챙기기'],
+ '수':['신장·방광·허리','소변 검사, 신장 수치','물 충분히 마시기, 하체·허리 근력 운동, 몸을 따뜻하게 하기']};
 let nyYear=null;
 function renderNewYear(){const ME=current.me,ds=ME.ds,now=new Date();if(!nyYear)nyYear=now.getMonth()>=9?now.getFullYear()+1:now.getFullYear();const Y=nyYear,[ys,yb]=yearPillar(Y);
  const tg=TG[tenGod(ds,ys)],tgb=TG[tenGod(ds,bMain[yb])],both=[tg,tgb];
@@ -1231,10 +1250,10 @@ function renderNewYear(){const ME=current.me,ds=ME.ds,now=new Date();if(!nyYear)
  ${yL(ys,yb,'해')}<div class="nyscore">${[['재물운',sc.money],[(ME.by&&Y-ME.by>=55)?'인연운':'연애운',sc.love],['일·공부운',sc.work],['건강운',sc.health]].map(([k,v])=>`<div><span>${k}</span><b>${stars(v)}</b></div>`).join('')}</div>
  ${(()=>{const yE=window.PROY&&window.PROY.yE,yEl=[E[stemE[ys]],E[branchE[yb]]],has=(S)=>both.filter(t=>S.includes(t)),lvTit=(ME.by&&Y-ME.by>=55)?'인연운':'연애운',tip=(v,a,b,c)=>v>=5?a:v>=4?b:c;
   const mH=has(moneyS),lH=has(loveS),wH=has(workS);
-  const rows=[['재물운',sc.money,`${mH.length?`올해 들어오는 ${mH[0]}(${TGX[mH[0]][0]}) 기운이 돈의 흐름을 열어 줘요. `:'돈의 기운이 크게 들어오지는 않는 평이한 해예요. '}${tip(sc.money,'새 수입원이나 부업을 시도해 보기 좋아요.','꾸준히 모으면 연말에 결과가 보여요.','큰 투자보다 지키고 정리하는 쪽이 유리해요.')}`,best('money')],
+  const rows=[['재물운',sc.money,`${mH.length?`올해 들어오는 ${mH[0]}(${TGX[mH[0]][0]}) 기운이 돈의 흐름을 열어 줘요. `:'돈의 기운이 크게 들어오지는 않는 평이한 해예요. '}${tip(sc.money,'새 수입원이나 부업을 시도해 보기 좋아요.','꾸준히 모으면 연말에 결과가 보여요.','큰 투자보다 지키고 정리하는 쪽이 유리해요.')}${(()=>{const W=MONEYWAY[mH[0]||tg];return `<span class="nyk"><b>잘 맞는 돈 관리</b>${W[2]}</span><span class="nychips">${W[0].map(x=>`<i class="ok">${x}</i>`).join('')}${W[1].map(x=>`<i class="no">${x} 주의</i>`).join('')}</span><span class="nyk"><b>로또·복권</b>${sc.money>=5?'재물 기운이 좋은 해라 재미로 한두 장 사 보는 건 괜찮아요. 당첨을 기대하기보다 기분 좋은 이벤트로요.':'운에 기대기보다 모으는 해예요. 산다면 커피 한 잔 값까지만 재미로요.'}</span><span class="nysm">투자·재테크는 사주보다 내 상황에 맞춰 판단해 주세요.</span>`})()}`,best('money')],
    [lvTit,sc.love,`${lH.length?`${lH[0]} 기운이 들어와 ${ME.sex?'인연의 별이 빛나는':'좋은 사람이 눈에 띄는'} 해예요. `:''}${loveExtra?'매력이 돋보이거나 마음이 잘 맞물리는 기운도 함께 와요. ':''}${chung?'배우자 자리(태어난 날)와 한 해의 글자가 부딪혀(충) 관계에 변화가 생기기 쉬워요. ':''}${tip(sc.love,'새 인연을 만나거나 관계가 한 걸음 나아가기 좋아요.','지금의 관계를 다정하게 가꾸기 좋은 해예요.','무리하게 관계를 바꾸기보다 서로의 시간을 존중해 주세요.')}`,best('love')],
    ['일·공부운',sc.work,`${wH.length?`${wH[0]}(${TGX[wH[0]][0]}) 기운이 들어와 일과 공부에 힘이 실려요. `:'일과 공부는 하던 걸 이어 가는 해예요. '}${tip(sc.work,'승진·이직·자격증처럼 한 단계 올라가는 도전에 좋아요.','차근차근 쌓은 실력이 인정받기 쉬워요.','새 일을 벌이기보다 기본기를 다지는 해예요.')}`,''],
-   ['건강운',sc.health,`${chung?'생활 리듬이 흔들리기 쉬운 해라 잠과 식사를 규칙적으로 챙겨 주세요. ':'큰 흔들림이 없는 해예요. 새 운동 습관을 들이기 좋아요. '}${yE&&yEl.includes(yE)?`나에게 꼭 필요한 ${yE} 기운이 들어와 몸과 마음이 회복되기 쉬워요.`:''}`,'']];
+   ['건강운',sc.health,(()=>{const cnt=E.map((_,i)=>ME.ps.flatMap(([a,b])=>[stemE[a],branchE[b]]).filter(x=>x===i).length),mn=Math.min(...cnt),wk=E[cnt.indexOf(mn)],H=HEALTH[wk];return `${chung?'생활 리듬이 흔들리기 쉬운 해라 잠과 식사를 규칙적으로 챙겨 주세요. ':'큰 흔들림이 없는 해예요. '}${yE&&yEl.includes(yE)?`나에게 꼭 필요한 ${yE} 기운이 들어와 몸과 마음이 회복되기 쉬워요. `:''}<span class="nyk"><b>살펴볼 곳</b>내 사주에 ${wk} 기운이 ${mn?'적어':'없어'} 명리에서는 ${H[0]} 쪽을 챙기라고 봐요.</span><span class="nyk"><b>검진 때</b>${H[1]} 항목을 함께 확인해 보세요.</span><span class="nyk"><b>생활 습관</b>${H[2]}</span><span class="nysm">사주로 본 참고용이에요. 몸이 불편하면 병원 진료가 먼저예요.</span>`})(),'']];
   return `<dl class="nyexp">${rows.map(([k,v,t,b])=>`<div><dt>${k}<span class="nyv">${v}/5</span></dt><dd>${t}${b&&b!=='고르게'?` <em>좋은 달: ${b}</em>`:''}</dd></div>`).join('')}</dl>`})()}
  <div class="nybox ${sj?'warn':''}"><b>${sj?`${sj}의 해예요`:'삼재가 아니에요'}</b>${sj?`${ZHI_ANI[ME.ps[0][1]]}띠는 ${Y}년이 ${sj}예요. 삼재는 9년마다 3년씩 돌아오는 조심할 시기로, 요즘은 ‘무리하지 말고 차분히 다지는 해’로 풀이해요. ${sj==='날삼재'?'날삼재는 삼재가 나가는 해라 마무리를 잘하면 좋아요.':sj==='들삼재'?'들삼재는 삼재가 들어오는 해라 큰 결정은 한 번 더 살펴보세요.':'눌삼재는 삼재 한가운데라 건강과 관계를 특히 챙기세요.'}`:`${ZHI_ANI[ME.ps[0][1]]}띠는 ${Y}년에 삼재가 없어요. 마음 편히 새로운 일을 시작해도 좋아요.`}</div>
  ${gwi?`<div class="nybox gold"><b>천을귀인이 찾아오는 해</b>${Y}년의 ${branches[yb]}${hasB(branches[yb])?'은':'는'} 나에게 귀인의 글자예요. 어려운 순간마다 도와주는 사람이 나타나요.</div>`:''}
@@ -1422,10 +1441,10 @@ $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts
  const FG={'목':'#5c7a3c','화':'#c0563d','토':'#a8792a','금':'#7d8494','수':'#33507f'};
  const fit=(t,font,size,max,min)=>{let s=size;g.font=font.replace('$',s);while(s>min&&g.measureText(t).width>max){s-=2;g.font=font.replace('$',s)}return s};
  await nightBg(g,W,Hh);
- {const ig=IMG.ilgan[current.ds];if(ig){try{const q=g.createRadialGradient(860,215,0,860,215,250);q.addColorStop(0,'#d8c7fb66');q.addColorStop(.45,'#b79cf533');q.addColorStop(1,'#b79cf500');g.fillStyle=q;g.fillRect(560,0,520,480);const im=new Image();im.src=ig;await im.decode();g.drawImage(im,700,50,320,320)}catch{}}}
- g.textAlign='left';g.fillStyle='#cfc6ec';g.font=`500 30px ${sans}`;g.fillText('나의 네 가지 모습',80,205);
- {fit(current.nick,`400 $px ${serif}`,104,560,60);const tg=g.createLinearGradient(80,0,620,0);tg.addColorStop(0,'#fbe3f1');tg.addColorStop(1,'#cdbbff');g.fillStyle=tg;g.fillText(current.nick,74,312)}
- {const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle='#cfc6ec';fit(subt,`500 $px ${sans}`,32,560,22);g.fillText(subt,80,368)}
+ {const ig=IMG.ilgan[current.ds];if(ig){try{const q=g.createRadialGradient(880,190,0,880,190,230);q.addColorStop(0,'#d8c7fb66');q.addColorStop(.45,'#b79cf533');q.addColorStop(1,'#b79cf500');g.fillStyle=q;g.fillRect(560,0,520,480);const im=new Image();im.src=ig;await im.decode();g.drawImage(im,750,48,280,280)}catch{}}}
+ g.textAlign='left';g.fillStyle='#cfc6ec';g.font=`500 30px ${sans}`;g.fillText('나의 네 가지 모습',84,182);
+ {fit(current.nick,`400 $px ${serif}`,104,560,60);const tg=g.createLinearGradient(80,0,620,0);tg.addColorStop(0,'#fbe3f1');tg.addColorStop(1,'#cdbbff');g.fillStyle=tg;g.fillText(current.nick,78,292)}
+ {const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle='#cfc6ec';fit(subt,`500 $px ${sans}`,32,560,22);g.fillText(subt,84,350)}
  const CAP=['타고난 나','밖에서의 나','친구와 있을 때','혼자 있을 때'];g.textAlign='center';
  for(let i=0;i<4;i++){const n=current.code[i],x=60+i*244,y=396,w=228,h=270,fg=FG[n]||'#8a84a8';
   g.save();g.shadowColor='#05041c99';g.shadowBlur=30;g.shadowOffsetY=12;{const q=g.createLinearGradient(0,y,0,y+h);q.addColorStop(0,'#f1e9fb');q.addColorStop(1,'#dccff0');g.fillStyle=q};rr(x+8,y,w-16,h,26);g.fill();g.restore();g.strokeStyle='#ffffff70';g.lineWidth=2;rr(x+9,y+1,w-18,h-2,25);g.stroke();
@@ -1480,7 +1499,7 @@ const RELN={friend:'친구',lover:'연인',spouse:'배우자',parent:'부모님'
 function relBlocks(A,B,rel,nm,ea,eb,hk,r1,fillB){const rk=hk?'hap':ea===eb?'same':(ea+1)%5===eb?'AgB':(eb+1)%5===ea?'BgA':(ea+2)%5===eb?'AkB':'BkA';
  const yE=window.PROY&&window.PROY.yE,actE=fillB[0]||(yE&&B.cnt[E.indexOf(yE)]>0?yE:E[eb]),AC=ACT[actE],why=fillB[0]?`${j(nm,'이','가')} 나에게 없는 ${actE} 기운을 채워 줘서`:actE===yE?`${j(nm,'이','가')} 가진 ${actE} 기운이 나에게 꼭 필요한 기운이라`:`${nm}의 본캐가 ${actE} 기운이라`;
  const sec=(t,body)=>`<section class="cmg"><h4>${t}</h4>${body}</section>`,tgOfB=X=>TG[tenGod(X.ds,bMain[X.ps[2][1]])];
- let out=sec(`${RELN[rel]}${hasB(RELN[rel])?'으로':'로'}서 두 사람`,`<p>${RT[rel][rk]}</p>`);
+ let out=sec(`${j(nm,'과','와')} 나`,`<p>${RT[rel][rk]}</p>`);
  if(rel==='lover'||rel==='spouse'){const sx=current.me&&current.me.sex,star=sx==='f'?(ea+3)%5:sx==='m'?(ea+2)%5:null,ta=tgOfB(A),tb=tgOfB(B);
   out+=sec('자세한 궁합',`<dl class="cmdl">${star!=null?`<div><dt>배우자 별</dt><dd>${eb===star?`${j(nm,'은','는')} 내 사주의 배우자 별(${E[star]} 기운)을 본캐로 가진 사람이에요. 명리에서 말하는 '짝의 기운'이 딱 맞아요.`:`내 배우자 별은 ${E[star]} 기운이고, ${j(nm,'은','는')} ${E[eb]} 기운이에요. 짝의 기운보다는 ${rk==='hap'||rk==='BgA'?'서로를 편하게 해 주는':'서로를 자극하고 키워 주는'} 인연이에요.`}</dd></div>`:''}<div><dt>연애 스타일</dt><dd>나는 '${TGX[ta][0]}', ${j(nm,'은','는')} '${TGX[tb][0]}'처럼 사랑해요. ${j(nm,'은','는')} ${LOVEX[tb][0]}</dd></div><div><dt>다툴 때</dt><dd>${r1==='chung'?'생활 리듬이 달라 부딪히기 쉬워요. ':r1==='yukhap'?'다퉈도 금방 풀리는 사이예요. ':''}${j(nm,'은','는')} ${LOVEX[tb][1]}</dd></div><div><dt>오래가려면</dt><dd>${LOVEX[tb][2]}</dd></div>${rel==='spouse'?`<div><dt>결혼 생활</dt><dd>${LOVEST.m.m[tb]}</dd></div>`:''}</dl>${star==null?'<p class="cmsm">내 성별을 고르면 배우자 별 궁합도 볼 수 있어요.</p>':''}`)}
  if(rel==='parent'){const ins=A.cnt[(ea+4)%5];out+=sec('나의 부모운',`<p>${ins>=2?'내 사주에 나를 돕는 기운(인성)이 많아 부모님 덕이 큰 편이에요. 힘들 때 부모님께 기대는 게 흠이 아니에요.':ins===1?'부모님과 적당한 거리에서 든든하게 지내는 사이예요. 자주 안부를 묻는 것만으로도 충분히 효도가 돼요.':'스스로 서는 힘이 강한 사주라 일찍 독립하는 편이에요. 마음을 표현하는 연습을 하면 부모님과 더 가까워져요.'}</p>`)}

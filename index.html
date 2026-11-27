@@ -631,7 +631,7 @@ b.ok,span.ok{color:#3e7a55}b.no,span.no{color:#b0456e}
 .rhero.v2 .rp-sub{font-weight:400!important}
 .rhero.v2 .hlinks .hl{font-weight:500!important}
 #save{font-weight:600!important}
-</style><style>body.has-result .tabbar{box-shadow:0 10px 24px #05041c55!important;border-radius:16px!important}body.has-result .tabbar.stuck{border-radius:0 0 16px 16px!important}</style></head><body><div class="app">
+</style><style>body.has-result .tabbar{box-shadow:0 10px 24px #05041c55!important;border-radius:16px!important}body.has-result .tabbar.stuck{border-radius:0 0 16px 16px!important}</style><style>#newyear .nytabs{display:flex!important;width:fit-content;margin-left:auto!important;margin-right:auto!important}</style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29fc2FfbmlnaHRfbGF2IiB4Mj0iLjg1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0I5OUNFQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzcyNTRCNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsb2dvX3NhX25pZ2h0X3BhcGVyIiB4Mj0iLjgiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGOUVCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRUVFMEM1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg0IiByeD0iMjMiIGZpbGw9InVybCgjbG9nb19zYV9uaWdodF9sYXYpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyNiIgeT0iMjgiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MiIgcng9IjYiLz48cGF0aCBkPSJNNDMgMzB2MTBjMCA5LTMgMTMtOSAxNk01MyAzMHYxOXEwIDYgNiA2aDkiLz48L2c+PHBhdGggZD0iTTc2IDE2UTc2LjcgMTkuMyA4MCAyMFE3Ni43IDIwLjcgNzYgMjRRNzUuMyAyMC43IDcyIDIwUTc1LjMgMTkuMyA3NiAxNloiIGZpbGw9IiNEOEI3NzciLz48L3N2Zz4=" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
 <div class="stickers" aria-hidden="true"><div class="st" style="background:#f7d9cf;color:#a6442f">火<small>화</small></div><div class="st" style="background:#dcebd6;color:#3e7047">木<small>목</small></div><div class="st" style="background:#d8e6f4;color:#33658f">水<small>수</small></div><div class="st" style="background:#f4e7c2;color:#86662a">土<small>토</small></div><div class="st" style="background:#e3e5ea;color:#5f6879">金</div></div></section>
@@ -1277,28 +1277,28 @@ $('#copy').addEventListener('click',async()=>{if(!current)return;const cc=curren
 function spaced(g,t,cx,y,font,em){g.font=font;const px=parseFloat(font.split(' ')[1])*em,ch=[...t],ws=ch.map(c=>g.measureText(c).width),tot=ws.reduce((a,b)=>a+b,0)+px*(ch.length-1);const al=g.textAlign;g.textAlign='left';let x=cx-tot/2;ch.forEach((c,i)=>{g.fillText(c,x,y);x+=ws[i]+px});g.textAlign=al}
 const loadFonts=async t=>{try{await Promise.all(['700','400'].flatMap(w=>[document.fonts.load(`400 40px 'Poor Story'`,t),document.fonts.load(`900 40px 'Poor Story'`,t),document.fonts.load(`700 40px 'Zen Maru Gothic'`,'四木火土金水甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥'+t)]));await document.fonts.ready}catch{}};
 $('#save').addEventListener('click',async()=>{if(!current)return;await loadFonts('너는 무슨 사주야? '+current.code.join('')+current.nick+'0123456789.%당신은무슨사주예요태어난순간별이정해준네글자목화토금수나의가지모습밖에서친구와있을때혼자시간모름너야'+dayInfo[current.ds].join(''));
- const W=1080,Hh=1350,cv=document.createElement('canvas');cv.width=W;cv.height=Hh;const g=cv.getContext('2d');const serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif",dokdo="'Poor Story','Zen Maru Gothic',sans-serif";
+ const W=1080,Hh=1080,cv=document.createElement('canvas');cv.width=W;cv.height=Hh;const g=cv.getContext('2d');const serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif",dokdo="'Poor Story','Zen Maru Gothic',sans-serif";
  const rr=(x,y,w,h,r)=>{g.beginPath();g.roundRect(x,y,w,h,r)};
  // ── v3.16 밤하늘 카드 ──
  const HJ={'목':'木','화':'火','토':'土','금':'金','수':'水'};
  const FG={'목':'#5c7a3c','화':'#c0563d','토':'#a8792a','금':'#7d8494','수':'#33507f'};
  const fit=(t,font,size,max,min)=>{let s=size;g.font=font.replace('$',s);while(s>min&&g.measureText(t).width>max){s-=2;g.font=font.replace('$',s)}return s};
  await nightBg(g,W,Hh);
- {const ig=IMG.ilgan[current.ds];if(ig){try{const q=g.createRadialGradient(830,330,0,830,330,280);q.addColorStop(0,'#d8c7fb66');q.addColorStop(.45,'#b79cf533');q.addColorStop(1,'#b79cf500');g.fillStyle=q;g.fillRect(540,40,560,580);const im=new Image();im.src=ig;await im.decode();g.drawImage(im,640,140,380,380)}catch{}}}
- g.textAlign='left';g.fillStyle='#cfc6ec';g.font=`500 30px ${sans}`;g.fillText('나의 네 가지 모습',80,270);
- {fit(current.nick,`400 $px ${serif}`,104,560,60);const tg=g.createLinearGradient(80,0,620,0);tg.addColorStop(0,'#fbe3f1');tg.addColorStop(1,'#cdbbff');g.fillStyle=tg;g.fillText(current.nick,74,380)}
- {const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle='#cfc6ec';fit(subt,`500 $px ${sans}`,32,560,22);g.fillText(subt,80,440)}
+ {const ig=IMG.ilgan[current.ds];if(ig){try{const q=g.createRadialGradient(820,280,0,820,280,260);q.addColorStop(0,'#d8c7fb66');q.addColorStop(.45,'#b79cf533');q.addColorStop(1,'#b79cf500');g.fillStyle=q;g.fillRect(540,20,540,520);const im=new Image();im.src=ig;await im.decode();g.drawImage(im,655,115,330,330)}catch{}}}
+ g.textAlign='left';g.fillStyle='#cfc6ec';g.font=`500 30px ${sans}`;g.fillText('나의 네 가지 모습',80,205);
+ {fit(current.nick,`400 $px ${serif}`,104,560,60);const tg=g.createLinearGradient(80,0,620,0);tg.addColorStop(0,'#fbe3f1');tg.addColorStop(1,'#cdbbff');g.fillStyle=tg;g.fillText(current.nick,74,312)}
+ {const subt=`${dayInfo[current.ds][0]}(${dayInfo[current.ds][1]}) 일간 · ${dayInfo[current.ds][2]}`;g.fillStyle='#cfc6ec';fit(subt,`500 $px ${sans}`,32,560,22);g.fillText(subt,80,368)}
  const CAP=['타고난 나','밖에서의 나','친구와 있을 때','혼자 있을 때'];g.textAlign='center';
- for(let i=0;i<4;i++){const n=current.code[i],x=60+i*244,y=540,w=228,h=290,fg=FG[n]||'#8a84a8';
+ for(let i=0;i<4;i++){const n=current.code[i],x=60+i*244,y=420,w=228,h=270,fg=FG[n]||'#8a84a8';
   g.save();g.shadowColor='#05041c99';g.shadowBlur=30;g.shadowOffsetY=12;{const q=g.createLinearGradient(0,y,0,y+h);q.addColorStop(0,'#f1e9fb');q.addColorStop(1,'#dccff0');g.fillStyle=q};rr(x+8,y,w-16,h,26);g.fill();g.restore();g.strokeStyle='#ffffff70';g.lineWidth=2;rr(x+9,y+1,w-18,h-2,25);g.stroke();
-  g.fillStyle='#6b6688';g.font=`500 24px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+50);
-  g.fillStyle=fg;g.font=`900 120px ${dokdo}`;g.fillText(n,x+w/2,y+172);
-  if(HJ[n]){g.globalAlpha=.72;g.font=`700 30px 'Zen Maru Gothic',serif`;g.fillText(HJ[n],x+w/2,y+216);g.globalAlpha=1}
-  g.fillStyle='#5a5680';g.font=`500 21px ${sans}`;g.fillText(i===3&&n==='?'?'시간 모름':CAP[i],x+w/2,y+258)}
- {const u3=current.code[3]==='?',t1=`같은 ${u3?'세':'네'} 글자 `,t2=`${fmtPct(current.pct)}%`;g.font=`900 46px ${dokdo}`;const w1=g.measureText(t1).width,w2=g.measureText(t2).width,x0=540-(w1+w2)/2;g.textAlign='left';g.fillStyle='#fff';g.fillText(t1,x0,940);const pg=g.createLinearGradient(x0+w1,0,x0+w1+w2,0);pg.addColorStop(0,'#f2b6e0');pg.addColorStop(1,'#cdbbff');g.fillStyle=pg;g.fillText(t2,x0+w1,940);g.textAlign='center';
-  g.fillStyle='#a69fc8';g.font=`500 23px ${sans}`;g.fillText(`약 ${fmtPeople(current.ppl)} · 통계청 출생 통계 기준${u3?' · 시간을 몰라 세 글자로 계산':''}`,540,984)}
- if(current.ss.length){g.font=`600 30px ${sans}`;const pw=current.ss.map(t=>g.measureText(t).width+64),tot=pw.reduce((a,b)=>a+b,0)+(pw.length-1)*16;let px=540-tot/2;current.ss.forEach((t,i)=>{g.fillStyle='#f2b6e01c';rr(px,1030,pw[i],62,31);g.fill();const bg=g.createLinearGradient(px,0,px+pw[i],0);bg.addColorStop(0,'#f2b6e0');bg.addColorStop(1,'#cdbbff');g.strokeStyle=bg;g.lineWidth=2.5;rr(px,1030,pw[i],62,31);g.stroke();g.fillStyle='#fbe3f1';g.fillText(t,px+pw[i]/2,1072);px+=pw[i]+16})}
- nightCta(g,'당신은 무슨 사주예요?',current.ss.length?1150:1100);
+  g.fillStyle='#6b6688';g.font=`500 24px ${sans}`;g.fillText(SLOTS[i].key,x+w/2,y+46);
+  g.fillStyle=fg;g.font=`900 120px ${dokdo}`;g.fillText(n,x+w/2,y+160);
+  if(HJ[n]){g.globalAlpha=.72;g.font=`700 30px 'Zen Maru Gothic',serif`;g.fillText(HJ[n],x+w/2,y+202);g.globalAlpha=1}
+  g.fillStyle='#5a5680';g.font=`500 21px ${sans}`;g.fillText(i===3&&n==='?'?'시간 모름':CAP[i],x+w/2,y+243)}
+ {const u3=current.code[3]==='?',t1=`같은 ${u3?'세':'네'} 글자 `,t2=`${fmtPct(current.pct)}%`;g.font=`900 46px ${dokdo}`;const w1=g.measureText(t1).width,w2=g.measureText(t2).width,x0=540-(w1+w2)/2;g.textAlign='left';g.fillStyle='#fff';g.fillText(t1,x0,752);const pg=g.createLinearGradient(x0+w1,0,x0+w1+w2,0);pg.addColorStop(0,'#f2b6e0');pg.addColorStop(1,'#cdbbff');g.fillStyle=pg;g.fillText(t2,x0+w1,752);g.textAlign='center';
+  g.fillStyle='#a69fc8';g.font=`500 23px ${sans}`;g.fillText(`약 ${fmtPeople(current.ppl)} · 통계청 출생 통계 기준${u3?' · 시간을 몰라 세 글자로 계산':''}`,540,794)}
+ if(current.ss.length){g.font=`600 30px ${sans}`;const pw=current.ss.map(t=>g.measureText(t).width+64),tot=pw.reduce((a,b)=>a+b,0)+(pw.length-1)*16;let px=540-tot/2;current.ss.forEach((t,i)=>{g.fillStyle='#f2b6e01c';rr(px,826,pw[i],60,30);g.fill();const bg=g.createLinearGradient(px,0,px+pw[i],0);bg.addColorStop(0,'#f2b6e0');bg.addColorStop(1,'#cdbbff');g.strokeStyle=bg;g.lineWidth=2.5;rr(px,826,pw[i],60,30);g.stroke();g.fillStyle='#fbe3f1';g.fillText(t,px+pw[i]/2,867);px+=pw[i]+16})}
+ nightCta(g,'당신은 무슨 사주예요?',current.ss.length?918:870,Hh);
 {const cc=current.code.join('').replace('?','');await shareCard(cv,`나의-사주-${cc}.png`,`저는 '${current.nick}'(${cc})! 당신은 무슨 사주예요?`,'결과 카드')}});
 const SITE=()=>location.href.split(/[?#]/)[0];
 const myLink=(extra={})=>{const q=new URLSearchParams();if(current){q.set('n',current.nick);q.set('s',current.code.join(''))}Object.entries(extra).forEach(([k,v])=>v!=null&&q.set(k,v));return SITE()+'?'+q.toString()};
@@ -1412,10 +1412,10 @@ async function nightBg(g,W,Hh,title){const serif="'Poor Story','Zen Maru Gothic'
  let seed=11;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;for(let i=0;i<120;i++){g.fillStyle=`rgba(255,255,255,${.25+rnd()*.6})`;g.beginPath();g.arc(rnd()*W,rnd()*Hh,rnd()*1.8+.4,0,7);g.fill()}
  const lg=document.querySelector('.logomark');if(lg){try{const im=new Image();im.src=lg.src;await im.decode();g.save();g.translate(98,90);g.rotate(-9*Math.PI/180);g.drawImage(im,-28,-28,56,56);g.restore()}catch{}}
  g.textAlign='left';g.fillStyle='#e9e3ff';g.font=`400 32px ${serif}`;g.fillText('너는 무슨 사주야?'+(title?' · '+title:''),142,101)}
-function nightCta(g,txt,y){const W=1080,serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif";g.textAlign='center';g.font=`400 46px ${serif}`;const w=Math.max(520,g.measureText(txt).width+120);
+function nightCta(g,txt,y,HH=1350){const W=1080,serif="'Poor Story','Zen Maru Gothic',serif",sans="'Noto Sans KR',sans-serif";g.textAlign='center';g.font=`400 46px ${serif}`;const w=Math.max(520,g.measureText(txt).width+120);
  g.save();g.shadowColor='#b79cf566';g.shadowBlur=30;{const q=g.createLinearGradient(540-w/2,y,540+w/2,y+94);q.addColorStop(0,'#a58be6');q.addColorStop(1,'#7458c2');g.fillStyle=q};g.beginPath();g.roundRect(540-w/2,y,w,94,47);g.fill();g.restore();
  g.fillStyle='#fff';g.strokeStyle='#fff';g.lineWidth=1.2;g.strokeText(txt,540,y+62);g.fillText(txt,540,y+62);
- const site=/github\.io$/.test(location.host)?(location.host+location.pathname).replace(/index\.html$/,'').replace(/\/$/,''):'';g.fillStyle='#8f88b8';g.font=`500 22px ${sans}`;g.fillText('✦ 별이 먼저 알고 있던 나 ✦',540,Math.min(y+150,1322))}
+ const site=/github\.io$/.test(location.host)?(location.host+location.pathname).replace(/index\.html$/,'').replace(/\/$/,''):'';g.fillStyle='#8f88b8';g.font=`500 22px ${sans}`;g.fillText('✦ 별이 먼저 알고 있던 나 ✦',540,Math.min(y+150,HH-28))}
 async function partyCard(mode){if(!current)return;const LP=window.lastParty||{marks:[],fr:[]};const t=window.myPartyT;const all=mode==='all'&&LP.fr.length;
  const marks=all?LP.marks:[[t,'나 여기!','me']];const title=all?'내 달빛 사랑채':'사랑채 속 내 자리';
  await loadFonts('너는 무슨 사주야? 달빛 사랑채 속 내 자리 당신은 어디에 있어요 '+title+(PARTY[t]?PARTY[t].spot:'')+marks.map(m=>m[1]).join('')+'0123456789명이 모였어요');

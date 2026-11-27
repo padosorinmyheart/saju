@@ -663,7 +663,32 @@ b.ok,span.ok{color:#3e7a55}b.no,span.no{color:#b0456e}
 #form .seg input:checked+label{background:#fff!important;color:#4b3a8c!important;box-shadow:0 2px 6px #6a4fc022!important}
 body:not(.has-result) #result{display:none!important}
 .welcome{display:flex;align-items:center;justify-content:space-between;gap:10px}
-</style></head><body><div class="app">
+</style><style>
+#grp-four .prose{display:grid;gap:14px!important}
+#grp-four .prose>*{margin:0!important}
+#grp-four .prose p,#grp-four .prose .callout{line-height:1.75!important;font-size:14.5px!important}
+#grp-four .lead2{font-size:14px!important;font-weight:800;color:#6a4fc0;display:flex!important;align-items:center;gap:8px}
+#grp-four .lead2::after{content:'';flex:1;min-width:24px;height:1px;background:linear-gradient(90deg,#cdbbff,#cdbbff00)}
+#grp-four .tgmini,#grp-four .callout{background:#f4effd!important;border:0!important;border-radius:16px!important;padding:14px 16px!important;box-shadow:none!important}
+#grp-four .tgmini .zhi{display:block;background:none!important;border:0!important;box-shadow:none!important;padding:0 0 10px!important;margin:0 0 10px!important;border-bottom:1px dashed #d8ccf2!important;border-radius:0!important;font-size:13px!important;line-height:1.7!important;color:#6b6688}
+#grp-four .tgmini .whyh,#grp-four .callout>b:first-child{display:block;font-size:13px!important;font-weight:800!important;color:#6a4fc0!important;margin:0 0 4px!important;line-height:1.5!important}
+#grp-four .callout{color:#3a3452}
+.card .seg:not(.relseg){background:#ece6fb!important;border:1px solid #ddd2f5!important;border-radius:14px!important;padding:3px!important}
+.card .seg:not(.relseg) label{color:#6a6288!important;border-radius:11px!important}
+.card .seg:not(.relseg) input:checked+label{background:#fff!important;color:#4b3a8c!important;box-shadow:0 2px 6px #6a4fc022!important}
+</style><style>
+#grp-what .wgrp{background:#ffffffb8;border:1px solid #ebe3fa;border-radius:18px;padding:16px 16px 18px;display:grid;gap:16px;order:50}
+#grp-what .wgt{margin:0;font-size:15px;font-weight:800;color:#34325e;display:flex;align-items:center;gap:7px;letter-spacing:-.01em}
+#grp-what .wgt::before{content:'';width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#cdbbff,#f2b6e0);flex:none}
+#grp-what .wgrp>*{margin:0!important}
+#grp-what .wgrp .relbox{border-top:0!important;padding-top:0!important}
+#grp-what .prose{gap:14px!important}
+</style><style>
+#grp-what .wgrp>p{font-size:14.5px;line-height:1.75;color:#3a3452}
+#grp-what .wgrp>p>b:first-child:has(+br){display:flex!important;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;font-weight:800;color:#6a4fc0;margin-bottom:4px}
+#grp-what .wgrp>p>b:first-child:has(+br)::after{content:'';flex:1;min-width:24px;height:1px;background:linear-gradient(90deg,#cdbbff,#cdbbff00)}
+#grp-what .wgrp>p>b:first-child:has(+br)+br{display:none}
+</style><style>#grp-four .lead2+p{margin-top:-8px!important}#grp-four h2+.prose{margin-top:4px!important}</style></head><body><div class="app">
 <header><div class="logo"><img class="logomark" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxvZ29fc2FfbmlnaHRfbGF2IiB4Mj0iLjg1IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0I5OUNFQiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzcyNTRCNSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsb2dvX3NhX25pZ2h0X3BhcGVyIiB4Mj0iLjgiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGOUVCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRUVFMEM1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg0IiByeD0iMjMiIGZpbGw9InVybCgjbG9nb19zYV9uaWdodF9sYXYpIi8+PHJlY3QgeD0iOCIgeT0iOSIgd2lkdGg9IjgwIiBoZWlnaHQ9Ijc4IiByeD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q4Qjc3NyIgc3Ryb2tlLXdpZHRoPSIuODUiIG9wYWNpdHk9Ii43Ii8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGM0RDIiBzdHJva2Utd2lkdGg9IjQuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyNiIgeT0iMjgiIHdpZHRoPSI0NCIgaGVpZ2h0PSI0MiIgcng9IjYiLz48cGF0aCBkPSJNNDMgMzB2MTBjMCA5LTMgMTMtOSAxNk01MyAzMHYxOXEwIDYgNiA2aDkiLz48L2c+PHBhdGggZD0iTTc2IDE2UTc2LjcgMTkuMyA4MCAyMFE3Ni43IDIwLjcgNzYgMjRRNzUuMyAyMC43IDcyIDIwUTc1LjMgMTkuMyA3NiAxNloiIGZpbGw9IiNEOEI3NzciLz48L3N2Zz4=" alt="">너는 무슨 사주야?</div></header>
 <section class="hero"><div><div class="kicker">사주팔자 × 오행 네 글자</div><h1>저는 <em>화화화화</em>예요.<br>당신은요?</h1><p class="lead">태어난 날과 시간을 사주팔자로 계산하고, 본캐·사회캐·찐친캐·혼캐를 목화토금수 네 글자로 보여 드려요. 625가지 조합 중 나는 얼마나 희귀할까요?</p></div>
 <div class="els" aria-hidden="true"><div class="el" style="--pf:#b5d6a8"><b data-t="목">목</b><i>木</i></div><div class="el" style="--pf:#f4ad9f"><b data-t="화">화</b><i>火</i></div><div class="el" style="--pf:#eccb85"><b data-t="토">토</b><i>土</i></div><div class="el" style="--pf:#d3d2e0"><b data-t="금">금</b><i>金</i></div><div class="el" style="--pf:#a9bde8"><b data-t="수">수</b><i>水</i></div></div></section>
@@ -1021,6 +1046,19 @@ const PPLMANY=['친구와 동료가 많은 구조예요. 어딜 가도 내 편�
 const PPLNONE=['친구·동료의 기운(비겁)이 없어 혼자 해결하는 데 익숙해요. 힘들 때 기댈 친구를 일부러 만들어 두면 좋아요.','표현의 기운(식상)이 없어 속마음을 밖으로 잘 드러내지 않아요. 표현을 조금만 늘려도 관계가 훨씬 편해져요.','거래의 기운(재성)이 없어 사람 관계를 계산으로 따지지 않아요. 순수한 대신 손해를 보기도 해요.','규칙·조직의 기운(관성)이 없어 틀에 매이지 않고 수평적인 관계가 편해요. 위계가 강한 조직에선 답답할 수 있어요.','도움의 기운(인성)이 없어 기대기보다 스스로 길을 찾는 편이에요. 좋은 멘토를 일부러 찾아보면 성장 속도가 달라져요.'];
 const RN={yukhap:'손잡은 사이(합)',samhap:'같은 편인 사이(삼합)',chung:'움직임이 많은 사이(충)',hyeong:'서로 다듬는 사이(형)',pa:'어긋나는 사이(파)',hae:'서운함이 쌓이는 사이(해)',wonjin:'밉고도 정든 사이(원진)',selfh:'혼자 끙끙 앓는 자리(자형)'},PLN={'연':'집안 자리','월':'일터 자리','일':'배우자 자리','시':'자녀 자리'};
 const RELP={yukhap:'서로 잘 맞고 도와줘요.',samhap:'같은 방향을 보는 사이예요.',chung:'변화가 잦지만 그만큼 서로에게 자극이 돼요. 다른 점을 성장의 계기로 쓰면 좋아요.',hyeong:'잔소리와 간섭이 생기기 쉽지만, 그만큼 서로를 단단하게 만들어요.',pa:'약속이나 계획이 어긋나기 쉬워요.',hae:'말하지 않은 서운함이 쌓이기 쉬워요. 그때그때 풀어 주세요.',wonjin:'정이 있으면서도 미운 마음이 섞이기 쉬워요.',selfh:''};
+
+function groupWhat(){const lab=e=>((e.querySelector(':scope>b,:scope>.mtitle,:scope>b.mtitle')||{}).textContent||'').trim(),L=t=>e=>lab(e).startsWith(t),C=c=>e=>e.classList.contains(c);
+ const G={love:[['나의 연애 스타일',[L('연애할 때의 나'),C('lovex'),e=>!!e.querySelector('.golink[data-go=sec-sinsal]')]],['인연과 지금의 나',[L('배우자 별'),C('relbox')]],['명리로 깊이 보면',[C('pro-add')]]],
+  money:[['돈이 들어오고 머무는 방식',[C('pats'),L('돈이 들어오는 방식'),L('재물이 있는 자리')]],['나의 재물 기운',[e=>lab(e).includes('기운이 곧 나의 재물'),C('pro-add')]],['이렇게 해 보세요',[C('mtip')]]],
+  job:[['일하는 나',[L('일할 때의 나'),C('jobex'),L('나에게 맞는 일하는 방식')]],['명리로 깊이 보면',[C('pro-add')]]],
+  spouse:[['배우자 자리',[L('배우자궁'),L('배우자 별')]],['다른 자리와의 사이',[C('pro-add')]],['내 상황에 맞춰 보기',[C('relbox')]]],
+  kids:[['자녀 자리',[L('자녀궁'),L('자녀 별'),e=>e.tagName==='P'&&!e.classList.contains('note')&&!lab(e)]],['다른 자리와의 사이',[C('pro-add')]],['내 상황에 맞춰 보기',[C('relbox')]]],
+  relx:[['내 곁의 사람들',[L('내 주변에 많은 사람'),L('나에게 없는 인연')]],['가까이할 사람 · 거리 둘 관계',[L('나를 살리는 사람'),L('거리를 두면')]],['자리별로 보면',[L('자리별 관계')]]]};
+ Object.entries(G).forEach(([id,groups])=>{const root=id==='relx'?document.querySelector('#relx>.prose'):document.getElementById(id);if(!root||root.dataset.grouped)return;root.dataset.grouped=1;
+  const items=[...root.children].filter(e=>!e.classList.contains('whead')&&!e.classList.contains('mbox')&&!(e.tagName==='P'&&e.classList.contains('note')));const notes=[...root.children].filter(e=>e.tagName==='P'&&e.classList.contains('note'));
+  const used=new Set(),boxes=[];groups.forEach(([t,ms])=>{const mine=items.filter(e=>!used.has(e)&&ms.some(m=>{try{return m(e)}catch(x){return false}}));if(!mine.length)return;mine.forEach(e=>used.add(e));const g=document.createElement('section');g.className='wgrp';g.innerHTML=`<h4 class="wgt">${t}</h4>`;mine.forEach(e=>g.appendChild(e));boxes.push(g)});
+  const rest=items.filter(e=>!used.has(e));if(rest.length&&boxes.length)rest.forEach(e=>boxes[0].appendChild(e));
+  boxes.forEach(g=>root.insertBefore(g,notes[0]||null))})}
 function proExtras(A,ps,unk){const {gt,G,good,bad,yong,yE,gE,johu,rel,allT,de}=A;const grp=t=>TG.indexOf(t)>>1,cnt=g=>allT.filter(t=>grp(t)===g).length,eG=e=>(E.indexOf(e)-de+5)%5;
  const add=(id,title,html)=>{const el=document.getElementById(id);if(!el)return;el.querySelectorAll('.pro-add').forEach(x=>x.remove());const h=`<div class="callout pro-add"><b>${title}</b>${html}</div>`,nt=[...el.querySelectorAll(':scope > p.note')].pop();if(nt&&!nt.nextElementSibling?.matches('.mtip'))nt.insertAdjacentHTML('beforebegin',h);else el.insertAdjacentHTML('beforeend',h)};
  const yg=yE?eG(yE):null,gg=gE?eG(gE):null,gname=['비겁','식상','재성','관성','인성'];
@@ -1053,7 +1091,7 @@ function proExtras(A,ps,unk){const {gt,G,good,bad,yong,yE,gE,johu,rel,allT,de}=A
  ${yg!=null?`<div class="callout"><b>나를 살리는 사람 · ${gname[yg]}</b>${PPL[yg]} 쪽 사람이 나에게 힘이 돼요. ${['비슷한 목표를 가진 동료와 함께할 때','내가 가르치고 챙겨 주는 사람과 있을 때','함께 일을 벌일 파트너가 있을 때','기준을 잡아 주는 상사나 선배가 있을 때','나를 믿어 주는 멘토가 있을 때'][yg]} 일이 잘 풀려요.</div>`:''}
  ${gg!=null?`<div class="callout"><b>거리를 두면 좋은 관계 · ${gname[gg]}</b>${PPL[gg]} 쪽과 얽힐 때 에너지가 많이 새요. ${['돈이 얽힌 친구 관계, 동업, 보증','나를 소모시키는 일방적인 돌봄','이익만 보고 다가오는 사람','지나치게 통제하는 윗사람','간섭이 심한 도움'][gg]}은 한 번 더 생각해요.</div>`:''}
  ${pr.length?`<div class="callout"><b>자리별 관계</b><span class="rkin">사주의 자리 중 태어난 해는 집안, 달은 직장·사회, 날은 나 자신을 뜻해요. 이 자리끼리 어떤 사이인지 본 거예요.</span>${[...new Set(pr.map(r=>r[1]))].map(key=>{const ks=[...new Set(pr.filter(r=>r[1]===key).map(r=>r[0]))];return `<b class="rk">${PL[key]} → ${ks.map(k=>RN[k]).join(', ')}</b>${ks.map(k=>RELP[k]).join(' ')}`}).join('')}</div>`:''}
- <p class="note">전통 명리의 십신·용신·합충을 사람 관계에 풀어 본 것이에요. 관계는 사주보다 서로의 노력이 훨씬 크게 좌우해요.</p></div>`}
+ <p class="note">전통 명리의 십신·용신·합충을 사람 관계에 풀어 본 것이에요. 관계는 사주보다 서로의 노력이 훨씬 크게 좌우해요.</p></div>`;try{groupWhat()}catch(e){console.error(e)}}
 
 function renderPro(ps,unk){const el=document.getElementById('pro');if(!el)return;const ds=ps[2][0],de=stemE[ds],labs=['연','월','일','시'],P=unk?[0,1,2]:[0,1,2,3];
  const jh=(h,r,x,y)=>h+j(r,x,y).slice(r.length),tgOfS=s=>TG[tenGod(ds,s)],grp=t=>TG.indexOf(t)>>1,elOfG=g=>E[(de+g)%5];
